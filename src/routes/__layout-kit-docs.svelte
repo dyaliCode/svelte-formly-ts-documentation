@@ -68,7 +68,7 @@
 	</KitDocsLayout>
 </KitDocs>
 
-<style>
+<style lang="scss">
 	:global(:root) {
 		--kd-color-brand-rgb: 233, 127, 6;
 	}
@@ -108,5 +108,19 @@
 		margin-top: 20px;
 		display: block;
 		width: 100%;
+	}
+	:global(.result) {
+		:global(article) {
+			padding: 20px;
+			margin-top: 2rem;
+			border: solid #dddddd 1px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			background-color: white;
+
+			:global(h2) {
+				margin-top: 0 !important;
+			}
+		}
 	}
 </style>
