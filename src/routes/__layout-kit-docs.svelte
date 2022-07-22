@@ -88,7 +88,7 @@
 		overflow: hidden;
 	}
 
-	:global(input) {
+	:global(input, select) {
 		border: 1px solid #ccc;
 		border-radius: 4px;
 		padding: 8px;
@@ -108,6 +108,11 @@
 		margin-top: 20px;
 		display: block;
 		width: 100%;
+
+		&:hover {
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+			background-color: rgb(91, 156, 255);
+		}
 	}
 	:global(.result) {
 		:global(article) {
