@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
 	export const prerender = true;
 
 	/** @type {import("@sveltejs/kit").Load} */
@@ -8,9 +8,12 @@
 			redirect: '/docs'
 		};
 	}
+</script> -->
+<script>
+	import '../app.css';
 </script>
 
-<!-- <header class="w-full bg-gray-700 text-slate-50 text-center pt-32 pb-32">
+<header class="w-full bg-gray-700 text-slate-50 text-center pt-32 pb-32">
 	<h1 class="text-5xl">
 		<span class="bg-slate-50 text-orange-500 rounded-full py-2 px-4 shadow-2xl">SF</span>
 		Svelte Formly
@@ -30,7 +33,7 @@
 		<div class="flex-1">
 			<a
 				class="w-full shadow-lg inline-flex items-center justify-center rounded-full p-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
-				href="/register">Github</a
+				href="/docs/getting-started/quick-start">Github</a
 			>
 		</div>
 	</div>
@@ -104,4 +107,4 @@
 			custom rules.
 		</p>
 	</div>
-</div> -->
+</div>
