@@ -3,7 +3,7 @@
 
 	export const load = createKitDocsLoader({
 		sidebar: {
-			'/': null,
+			'/': '',
 			'/docs': '/docs'
 		}
 	});
@@ -17,7 +17,6 @@
 	import '@svelteness/kit-docs/client/styles/vars.css';
 
 	import { page } from '$app/stores';
-	import SvelteLogo from '$img/svelte-horizontal.svg?raw';
 
 	import {
 		Button,
@@ -59,9 +58,7 @@
 <KitDocs {meta}>
 	<KitDocsLayout {navbar} {sidebar}>
 		<div class="logo" slot="navbar-left">
-			<Button href="/">
-				{@html SvelteLogo} Formly
-			</Button>
+			<Button href="/">Svelte Formly</Button>
 		</div>
 
 		<slot />

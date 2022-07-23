@@ -1,9 +1,9 @@
 <div style="max-width: 992px; margin: 0 auto;">
 
-# Welcome to KitDocs
+# Svelte Formly
 
-This your home page. Feel free to change it to a Svelte file by renaming it
-to `index@kit-docs.svelte`.
+A good solution to generate and control a dynamic forms using core and custom rules with
+customize styles.
 
 ## Redirecting
 
@@ -12,15 +12,15 @@ rename this file to `index.svelte` and replace the content of this file with the
 
 ```svelte copy
 <script context="module">
-  export const prerender = true;
+	export const prerender = true;
 
-  /** @type {import("@sveltejs/kit").Load} */
-  export function load() {
-    return {
-      status: 307,
-      redirect: '/docs',
-    };
-  }
+	/** @type {import("@sveltejs/kit").Load} */
+	export function load() {
+		return {
+			status: 307,
+			redirect: '/docs'
+		};
+	}
 </script>
 ```
 
