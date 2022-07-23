@@ -1,29 +1,20 @@
-<!-- <script context="module">
-	export const prerender = true;
-
-	/** @type {import("@sveltejs/kit").Load} */
-	export function load() {
-		return {
-			status: 307,
-			redirect: '/docs'
-		};
-	}
-</script> -->
 <script>
 	import '../app.css';
 </script>
 
 <header class="w-full bg-gray-700 text-slate-50 text-center pt-32 pb-32">
-	<h1 class="text-5xl">
-		<span class="bg-slate-50 text-orange-500 rounded-full py-2 px-4 shadow-2xl">SF</span>
+	<h1 class="text-5xl drop-shadow-md">
+		<span class="bg-slate-50 text-orange-500 rounded-full p-4 shadow-lg shadow-slate-500/50"
+			>SF</span
+		>
 		Svelte Formly
 	</h1>
-	<p class="mt-10 mx-auto text-xl w-1/3 text-center tracking-wider">
+	<p class="mt-10 mx-auto text-xl w-1/3 text-center tracking-wider drop-shadow-md">
 		A good solution to generate and control a dynamic forms using core and custom rules with
 		customize styles.
 	</p>
 
-	<div class="mt-10 mx-auto w-1/4 flex space-x-4 justify-center">
+	<div class="mt-10 mx-auto sm:w-full lg:w-1/4 flex space-x-4 justify-center">
 		<div class="flex-1">
 			<a
 				class="w-full shadow-lg inline-flex items-center justify-center rounded-full p-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
@@ -33,13 +24,16 @@
 		<div class="flex-1">
 			<a
 				class="w-full shadow-lg inline-flex items-center justify-center rounded-full p-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
-				href="/docs/getting-started/quick-start">Github</a
+				href="https://github.com/dyaliCode/svelte-formly"
+				target="_blink">Github</a
 			>
 		</div>
 	</div>
 </header>
 
-<div class="mx-auto mt-10 w-3/5 flex justify-center space-x-4 text-slate-50">
+<div
+	class="mx-auto mt-10 sm:w-3/4 md:w-3/5 grid gap-4 xl:grid-cols-3 lg:grid-cols-1 sm:grid-cols-1 text-slate-50"
+>
 	<div class="bg-orange-500 shadow-lg shadow-rose-600/50 text-center p-10 rounded-3xl">
 		<div class="w-full">
 			<svg
