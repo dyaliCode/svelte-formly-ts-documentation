@@ -8,10 +8,10 @@
 						href="/docs/getting-started/quick-start">Getting Started</a
 					><a
 						class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-						href="/docs/components">Components</a
+						href="/docs/getting-started/quick-start">Components</a
 					><a
 						class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-						href="/docs/examples">Examples</a
+						href="/docs/getting-started/quick-start">Examples</a
 					>
 				</div>
 			</div>
