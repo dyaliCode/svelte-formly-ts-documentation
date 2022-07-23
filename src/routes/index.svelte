@@ -25,7 +25,7 @@
 </header>
 
 <div class="mx-auto mt-10 w-3/5 flex justify-center space-x-4 text-slate-50">
-	<div class="bg-orange-500 shadow-lg shadow-rose-600/50 text-center p-10 rounded-md">
+	<div class="bg-orange-500 shadow-lg shadow-rose-600/50 text-center p-10 rounded-3xl">
 		<div class="w-full">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@
 			custom rules.
 		</p>
 	</div>
-	<div class="bg-blue-500 shadow-lg shadow-blue-600/50 text-center p-10 rounded-md drop-shadow-md">
+	<div class="bg-blue-500 shadow-lg shadow-blue-600/50 text-center p-10 rounded-3xl">
 		<div class="w-full">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@
 			custom rules.
 		</p>
 	</div>
-	<div class="bg-zinc-500 shadow-lg shadow-zinc-600/50 text-center p-10 rounded-md drop-shadow-md">
+	<div class="bg-zinc-500 shadow-lg shadow-zinc-600/50 text-center p-10 rounded-3xl">
 		<div class="w-full">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
