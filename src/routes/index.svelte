@@ -10,7 +10,7 @@
 	}
 </script>
 
-<header class="w-full bg-gray-700 text-slate-50 text-center pt-32 pb-32">
+<!-- <header class="w-full bg-gray-700 text-slate-50 text-center pt-32 pb-32">
 	<h1 class="text-5xl">
 		<span class="bg-slate-50 text-orange-500 rounded-full py-2 px-4 shadow-2xl">SF</span>
 		Svelte Formly
@@ -104,4 +104,4 @@
 			custom rules.
 		</p>
 	</div>
-</div>
+</div> -->

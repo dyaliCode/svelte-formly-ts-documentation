@@ -1,151 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="../../favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-    <script>
-      const key = 'svelteness::color-scheme';
-      const scheme = localStorage[key];
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (scheme === 'dark' || (scheme !== 'light' && prefersDark)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
-  
-    <meta http-equiv="content-security-policy" content=""><title>Advanced: Multiple Forms | Svelte Formly</title>
-		<meta name="description" content="You can create a multiple forms in the same component." data-svelte="svelte-18oalgx">
-	<link rel="stylesheet" href="/_app/immutable/assets/__layout-kit-docs-1abde173.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/scroll-f726ebda.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/Result-9fb10857.css">
-	<link rel="modulepreload" href="/_app/immutable/start-83d75510.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-29635d82.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-eb14b229.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout-kit-docs.svelte-df4c2fee.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/scroll-face605a.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/docs/__layout@kit-docs.svelte-df6bd09a.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/docs/_...2_advanced/_...2_multiple-form.md-5dc2fae5.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/Result-fb5c37b2.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/CodeFence-3b1ba0cf.js">
-	</head>
-	<body>
-		<div>
+import{S as H,i as L,s as M,w as $,x as h,y as b,f as v,t as B,B as P,l as f,r as I,a as E,m as d,n as u,u as S,h as F,c as g,b as w,M as i,E as N,v as V,_ as O}from"../../../chunks/index-29635d82.js";import{R as j,F as R,g as k}from"../../../chunks/Result-fb5c37b2.js";import{f as z}from"../../../chunks/scroll-967765ef.js";import{C as G}from"../../../chunks/CodeFence-8f67fe7a.js";import"../../../chunks/singletons-eb14b229.js";import"../../../chunks/contexts-cdaa50b4.js";function J(D){let n,l,a,p,e,r,m,y,c,C,A,s,o;return r=new R({props:{form_name:Q,fields:D[0]}}),s=new R({props:{form_name:W,fields:D[1]}}),{c(){n=f("section"),l=f("article"),a=f("h2"),p=I("Sign In"),e=E(),$(r.$$.fragment),m=E(),y=f("article"),c=f("h2"),C=I("Sign Up"),A=E(),$(s.$$.fragment)},l(t){n=d(t,"SECTION",{});var _=u(n);l=d(_,"ARTICLE",{});var T=u(l);a=d(T,"H2",{});var x=u(a);p=S(x,"Sign In"),x.forEach(F),e=g(T),h(r.$$.fragment,T),T.forEach(F),m=g(_),y=d(_,"ARTICLE",{});var q=u(y);c=d(q,"H2",{});var U=u(c);C=S(U,"Sign Up"),U.forEach(F),A=g(q),h(s.$$.fragment,q),q.forEach(F),_.forEach(F)},m(t,_){w(t,n,_),i(n,l),i(l,a),i(a,p),i(l,e),b(r,l,null),i(n,m),i(n,y),i(y,c),i(c,C),i(y,A),b(s,y,null),o=!0},p:N,i(t){o||(v(r.$$.fragment,t),v(s.$$.fragment,t),o=!0)},o(t){B(r.$$.fragment,t),B(s.$$.fragment,t),o=!1},d(t){t&&F(n),P(r),P(s)}}}function K(D){let n,l;return n=new j({props:{$$slots:{default:[J]},$$scope:{ctx:D}}}),{c(){$(n.$$.fragment)},l(a){h(n.$$.fragment,a)},m(a,p){b(n,a,p),l=!0},p(a,[p]){const e={};p&8&&(e.$$scope={dirty:p,ctx:a}),n.$set(e)},i(a){l||(v(n.$$.fragment,a),l=!0)},o(a){B(n.$$.fragment,a),l=!1},d(a){P(n,a)}}}const Q="formly_a",W="formly_b";function X(D){return[[{type:"input",name:"email",attributes:{type:"text",id:"email",placeholder:"Tap your email"},rules:["required","email"]},{type:"input",name:"password",attributes:{type:"password",id:"password",placeholder:"Tap your password"},rules:["required"]}],[{type:"input",name:"email",attributes:{type:"text",id:"email_register",placeholder:"Tap your email"},rules:["required","email"]},{type:"input",name:"password",attributes:{type:"password",id:"password_register",placeholder:"Tap your password"},rules:["required"]},{type:"input",name:"confirm_password",attributes:{type:"password",id:"confirm_password",placeholder:"Tap your confirm password"},rules:["required",{name:"confirmPassword",fnc:async()=>{const p=await k("formly_b");return p?!p.password||!p.confirm_password?!1:p.password==p.confirm_password:!0}}],messages:{confirmPassword:"Password and confirm password must be the same"}}]]}class Y extends H{constructor(n){super(),L(this,n,X,K,M,{})}}function Z(D){let n,l=D[0].title+"",a,p,e,r=D[0].description+"",m,y,c,C,A;return c=new G({props:{title:"example",lang:"svelte",ext:"svelte",linesCount:86,rawCode:`<script&#8203 lang="ts">
+	import { Formly, type IField, getValues } from 'svelte-formly';
 
+	// Form Sign In
+	const form_name_a = 'formly_a';
+	const fieldsA: IField[] = [
+		{
+			type: 'input',
+			name: 'email',
+			attributes: {
+				type: 'text',
+				id: 'email',
+				placeholder: 'Tap your email'
+			}
+		},
+		{
+			type: 'input',
+			name: 'password',
+			attributes: {
+				type: 'password',
+				id: 'password',
+				placeholder: 'Tap your password'
+			}
+		}
+	];
 
+	// Form Sign Up
+	const form_name_b = 'formly_b';
+	const confirmPassword = async (): Promise<boolean> => {
+		const values: any = await getValues('formly_b'); // await is required.
+		if (values) {
+			if (!values.password || !values.confirm_password) {
+				return false;
+			}
+			return values.password != values.confirm_password ? false : true;
+		}
+		return true;
+	};
+	const fieldsB: IField[] = [
+		{
+			type: 'input',
+			name: 'email',
+			attributes: {
+				type: 'text',
+				id: 'email_register',
+				placeholder: 'Tap your email'
+			},
+			rules: ['required', 'email']
+		},
+		{
+			type: 'input',
+			name: 'password',
+			attributes: {
+				type: 'password',
+				id: 'password_register',
+				placeholder: 'Tap your password'
+			},
+			rules: ['required']
+		},
+		{
+			type: 'input',
+			name: 'confirm_password',
+			attributes: {
+				type: 'password',
+				id: 'confirm_password',
+				placeholder: 'Tap your confirm password'
+			},
+			rules: ['required', { name: 'confirmPassword', fnc: confirmPassword }],
+			messages: {
+				confirmPassword: 'Password and confirm password must be the same'
+			}
+		}
+	];
+<\/script>
 
-
-<div class="kit-docs bg-gray-body min-h-full min-w-full h-full transition-transform duration-150 ease-out" style="font-family: var(--kd-font-family-sans, inherit); --kd--navbar-height: calc(var(--kd-navbar-height) + var(--kd-breadcrumbs-height));"><div class="fixed top-0 z-30 w-full flex-none transform-gpu transition-transform duration-150 ease-out supports-backdrop-blur:bg-white/60 bg-gray-200/95 backdrop-blur dark:bg-gray-800/60 translate-y-0" style="border-bottom: var(--kd-navbar-border-bottom);"><div class="flex w-full flex-col items-center justify-center mx-auto max-w-[var(--kd-navbar-max-width)] p-[var(--kd-navbar-padding)] h-[var(--kd--navbar-height)]"><div class="flex w-full items-center"><div class="logo svelte-1jmdrf2" slot="navbar-left">
-  <a class="group transform-gpu text-lg font-medium transition-transform hover:scale-105" href="/">
-    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0">Svelte Formly</span>
-    </a></div>
-        
-
-    <div class="flex-1"></div>
-
-    <div class="992:hidden -mr-2 flex items-center">
-
-      <div class="relative inline-block text-left not-prose"><button id="popover-button-5" type="button" class="inline-flex w-full justify-center rounded-md p-2 text-lg font-medium text-gray-soft hover:text-gray-inverse" aria-controls="popover-5" aria-expanded="false" aria-haspopup="true"><svg width="30" height="30" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><!-- HTML_TAG_START --><path fill="currentColor" d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z"/><!-- HTML_TAG_END --></svg>
-          <span class="sr-only">Main navigation menu</span>
-        </button>
-
-  <div class="fixed top-0 left-0 bg-black/40 backdrop-blur-sm dark:bg-gray-700/80 transition-opacity duration-75 pointer-events-auto z-40 w-screen h-screen opacity-0 invisible"></div>
-
-  <div hidden></div>
-
-</div></div>
-
-    <div class="992:flex 992:items-center hidden"><nav><ul class="flex items-center space-x-8 text-lg font-medium"><li class="mt-4 first:mt-0 992:mt-0"><a class="p-1 border-b hover:border-b-2 border-brand text-gray-inverse" href="/docs">Documentation</a></li></ul></nav>
-
-      
-        
-
-      <div class="border-gray-divider ml-6 mr-2.5 h-7 w-2 border-l-[1.5px]"></div>
-
-      <div class="hidden 992:flex items-center">
-        
-        <div class="relative inline-block text-left not-prose"><button id="menu-button-5" type="button" class="inline-flex w-full justify-center rounded-md p-2 text-lg font-medium text-gray-soft hover:text-gray-inverse" aria-controls="menu-5" aria-expanded="false" aria-haspopup="true"><svg width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="h-6 w-6"><!-- HTML_TAG_START --><path fill="currentColor" d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/><!-- HTML_TAG_END --></svg>
-    <span class="sr-only">Color Scheme</span>
-  </button>
-
-  <div hidden></div>
-
-</div></div></div></div>
-
-  <div class="border-gray-divider 992:hidden flex w-full items-center mt-4 pt-4 border-t"><button id="main-sidebar-button" type="button" class="text-gray-soft hover:text-gray-inverse inline-flex justify-center rounded-md p-2 text-sm font-medium" aria-controls="main-sidebar" aria-expanded="false" aria-haspopup="true"><span class="sr-only">Open main sidebar</span>
-                  <svg width="28" height="28" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><!-- HTML_TAG_START --><path fill="currentColor" d="M21 18v2H3v-2h18zM17.05 3.55L22 8.5l-4.95 4.95v-9.9zM12 11v2H3v-2h9zm0-7v2H3V4h9z"/><!-- HTML_TAG_END --></svg></button>
-
-              <ol class="text-md text-gray-soft flex items-center whitespace-nowrap leading-6 mt-px ml-2.5"><li class="flex items-center">Advanced
-                      <svg width="16" height="16" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="mx-1"><!-- HTML_TAG_START --><path fill="currentColor" d="m13.172 12l-4.95-4.95l1.414-1.414L16 12l-6.364 6.364l-1.414-1.414z"/><!-- HTML_TAG_END --></svg></li>
-                  <li class="truncate font-semibold text-slate-900 dark:text-slate-200">Multiple Forms</li></ol></div>
-
-          
-        </div></div>
-
-  <div class="mx-auto w-full flex flex-row min-h-full max-w-[var(--kd-content-max-width)] pt-[var(--kd--navbar-height)] z-20"><aside id="main-sidebar" class="sidebar self-start fixed top-0 left-0 transform bg-gray-body z-50 border-gray-divider border-r -translate-x-full transform transition-transform duration-200 ease-out will-change-transform max-h-screen min-h-screen min-w-[var(--kd-sidebar-min-width)] max-w-[var(--kd-sidebar-max-width)] 992:translate-x-0 922:block 992:sticky 992:z-0 overflow-y-auto p-[var(--kd-sidebar-padding)] 992:top-[var(--kd--navbar-height)] 992:min-h-[calc(100vh-var(--kd--navbar-height))] 992:max-h-[calc(100vh-var(--kd--navbar-height))]" role="dialog" aria-modal="true" style=""><div class="992:hidden sticky top-0 left-0 flex items-center"><div class="flex-1"></div>
-    <button class="text-gray-soft hover:text-gray-inverse p-4 -mx-6 pointer-events-none"><svg width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><!-- HTML_TAG_START --><path fill="currentColor" d="m12 10.586l4.95-4.95l1.414 1.414l-4.95 4.95l4.95 4.95l-1.414 1.414l-4.95-4.95l-4.95 4.95l-1.414-1.414l4.95-4.95l-4.95-4.95L7.05 5.636z"/><!-- HTML_TAG_END --></svg>
-      <span class="sr-only">Close sidebar</span></button></div>
-
-  <nav class="992:px-1">
-
-    
-
-    <ul class="mt-8 pb-28 992:pb-0">
-        <li class="992:mt-10 mt-12 first:mt-0"><h5 class="text-gray-strong 992:mb-3 mb-8 text-lg font-semibold">Getting Started
-            </h5>
-          <ul class="border-gray-divider space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/getting-started/quick-start" style="">
-                  Quick Start
-                  </a>
-              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/getting-started/validation" style="">
-                  Validation
-                  </a>
-              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/getting-started/style" style="">
-                  Style
-                  </a>
-              </li></ul>
-        </li>
-        <li class="992:mt-10 mt-12 first:mt-0"><h5 class="text-gray-strong 992:mb-3 mb-8 text-lg font-semibold">Advanced
-            </h5>
-          <ul class="border-gray-divider space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/advanced/alter-form" style="">
-                  Alter Form
-                  </a>
-              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 text-brand font-semibold" href="/docs/advanced/multiple-form" style="border-color: var(--kd-sidebar-border-active);">
-                  Multiple Forms
-                  </a>
-              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/advanced/custom-validation" style="">
-                  Custom Validation
-                  </a>
-              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/advanced/preprocess" style="">
-                  Preprocess
-                  </a>
-              </li></ul>
-        </li></ul>
-
-    
-        </nav></aside>
-
-<div class="992:hidden z-40"><div class="fixed top-0 left-0 bg-black/40 backdrop-blur-sm dark:bg-gray-700/80 transition-opacity duration-75 pointer-events-auto z-40 w-screen h-screen opacity-0 invisible"></div></div>
-
-    <main class="w-full overflow-x-hidden 992:min-h-[calc(100vh-var(--kd--navbar-height))] min-h-[calc(100vh-var(--kd--navbar-height))] px-8 992:px-16 pt-8" style="max-width: var(--kd-main-max-width, var(--kd-article-max-width));">
-
-      <article class="markdown prose dark:prose-invert z-10 max-w-[var(--kd-article-max-width)]"><p class="text-brand mb-3.5 text-[15px] font-semibold leading-6">Advanced</p>
-
-          
-
-<h1>Multiple Forms</h1>
-<p>You can create a multiple forms in the same component.</p>
-<div class="code-fence overflow-y-auto relative max-h-[60vh] 576:max-h-[32rem] my-8 rounded-md shadow-lg mx-auto border border-gray-divider lang-svelte ext-svelte" style="background-color: var(--kd-code-fence-bg);"><div class="sticky top-0 left-0 z-10 flex items-center rounded-md pt-2 backdrop-blur supports-backdrop-blur:bg-white/60" style="background-color: var(--kd-code-fence-top-bar-bg);"><span class="ml-3.5 font-mono text-sm text-gray-300">example</span>
-
-      <div class="flex-1"></div>
-
-      <button type="button" class="mr-2 px-2 py-1 hover:text-white"><div class="text-white absolute top-2.5 right-4 transition-opacity z-10 duration-300 px-2 py-1 rounded-md ease-out text-sm font-mono hidden opacity-0" aria-hidden="true" style="background-color: var(--kd-code-copied-bg-color);">Copied!</div>
-
-          <svg width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="opacity-100 transition-opacity duration-600 ease-in"><!-- HTML_TAG_START --><path fill="currentColor" d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.007-1H7zM5.003 8L5 20h10V8H5.003zM9 6h8v10h2V4H9v2z"/><!-- HTML_TAG_END --></svg>
-          <span class="sr-only">Copy code</span></button></div>
-
-  <div class="code relative z-0 overflow-hidden"><div class=""><!-- HTML_TAG_START --><pre><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">lang</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">ts</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
+<section>
+	<article>
+		<h2>Sign In</h2>
+		<Formly form_name={form_name_a} fields={fieldsA} />
+	</article>
+	<article>
+		<h2>Sign Up</h2>
+		<Formly form_name={form_name_b} fields={fieldsB} />
+	</article>
+</section>
+`,showCopyCode:!0,code:`<pre><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">lang</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">ts</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">Formly</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">type</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">IField</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">getValues</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">svelte-formly</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// Form Sign In</span></span>
@@ -230,69 +168,4 @@
 <span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Formly</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">form_name</span><span style="color: #89DDFF">={</span><span style="color: #A6ACCD">form_name_b</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">fields</span><span style="color: #89DDFF">={</span><span style="color: #A6ACCD">fieldsB</span><span style="color: #89DDFF">} /&gt;</span></span>
 <span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">article</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">section</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
-
-    
-
-    </div></div><div class="result admonition my-8 border-2 border-l-8 p-4 rounded-md mx-auto shadow-xl border-blue-400 bg-blue-300/10"><div class="flex h-full items-center font-bold text-blue-400"><span class="flex items-center">Result</span></div>
-	<section><article><h2>Sign In</h2>
-			<form>
-					<input type="text" id="email" placeholder="Tap your email" required  >
-					
-					<input type="password" id="password" placeholder="Tap your password" required  >
-					
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button></form></article>
-		<article><h2>Sign Up</h2>
-			<form>
-					<input type="text" id="email_register" placeholder="Tap your email" required  >
-					
-					<input type="password" id="password_register" placeholder="Tap your password" required  >
-					
-					<input type="password" id="confirm_password" placeholder="Tap your confirm password" required  >
-					
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button></form></article></section></div></article>
-
-      <hr class="border-gray-divider mt-20">
-
-        <div class="992:text-xl flex items-center pt-12 pb-20 text-lg font-semibold text-gray-300"><div class="mb-4 flex flex-col items-start"><span class="text-gray-inverse ml-3 mb-4 inline-block">Previous</span>
-              
-  <a class="group transform-gpu text-lg font-medium transition-transform hover:scale-105 hover:text-gray-inverse" href="/docs/advanced/alter-form" sveltekit:prefetch><span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 inline-block">&lt;-</span>
-    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 -translate-x-3 ">Alter Form</span>
-    </a></div>
-
-          <div class="ml-auto mb-4 flex flex-col items-end"><span class="text-gray-inverse mr-3 mb-4 inline-block">Next</span>
-              
-  <a class="group transform-gpu text-lg font-medium transition-transform hover:scale-105 hover:text-gray-inverse" href="/docs/advanced/custom-validation" sveltekit:prefetch>
-    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 translate-x-2">Custom Validation</span>
-    <span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 inline-block">-&gt;</span></a></div></div>
-
-      </main>
-
-    <div class="992:flex-1"></div>
-
-    </div></div>
-
-
-		<script type="module" data-sveltekit-hydrate="g3tu89">
-		import { start } from "/_app/immutable/start-83d75510.js";
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="g3tu89"]').parentNode,
-			paths: {"base":"","assets":""},
-			session: {},
-			route: true,
-			spa: false,
-			trailing_slash: "never",
-			hydrate: {
-				status: 200,
-				error: null,
-				nodes: [2, 3, 8],
-				params: {"2":""},
-				routeId: "docs/[...2]advanced/[...2]multiple-form"
-			}
-		});
-	</script><script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/docs_advanced_multiple-form.meta.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"excerpt\":\"\",\"headers\":[],\"title\":\"Multiple Forms\",\"description\":\"You can create a multiple forms in the same component.\",\"frontmatter\":{\"title\":\"Multiple Forms\",\"description\":\"You can create a multiple forms in the same component.\"},\"lastUpdated\":1658446409132}"}</script>
-	<script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/docs.sidebar.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"links\":{\"Getting Started\":[{\"title\":\"Quick Start\",\"slug\":\"/docs/getting-started/quick-start\"},{\"title\":\"Validation\",\"slug\":\"/docs/getting-started/validation\"},{\"title\":\"Style\",\"slug\":\"/docs/getting-started/style\"}],\"Advanced\":[{\"title\":\"Alter Form\",\"slug\":\"/docs/advanced/alter-form\"},{\"title\":\"Multiple Forms\",\"slug\":\"/docs/advanced/multiple-form\"},{\"title\":\"Custom Validation\",\"slug\":\"/docs/advanced/custom-validation\"},{\"title\":\"Preprocess\",\"slug\":\"/docs/advanced/preprocess\"}]}}"}</script></div>
-	</body>
-</html>
+<span class="line"></span></code></pre>`}}),C=new Y({}),{c(){n=f("h1"),a=I(l),p=E(),e=f("p"),m=I(r),y=E(),$(c.$$.fragment),$(C.$$.fragment)},l(s){n=d(s,"H1",{});var o=u(n);a=S(o,l),o.forEach(F),p=g(s),e=d(s,"P",{});var t=u(e);m=S(t,r),t.forEach(F),y=g(s),h(c.$$.fragment,s),h(C.$$.fragment,s)},m(s,o){w(s,n,o),i(n,a),w(s,p,o),w(s,e,o),i(e,m),w(s,y,o),b(c,s,o),b(C,s,o),A=!0},p(s,[o]){(!A||o&1)&&l!==(l=s[0].title+"")&&V(a,l),(!A||o&1)&&r!==(r=s[0].description+"")&&V(m,r)},i(s){A||(v(c.$$.fragment,s),v(C.$$.fragment,s),A=!0)},o(s){B(c.$$.fragment,s),B(C.$$.fragment,s),A=!1},d(s){s&&F(n),s&&F(p),s&&F(e),s&&F(y),P(c,s),P(C,s)}}}function ss(D,n,l){let a;return O(D,z,p=>l(0,a=p)),[a]}class es extends H{constructor(n){super(),L(this,n,ss,Z,M,{})}}export{es as default};
