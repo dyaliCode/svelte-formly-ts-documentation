@@ -5,7 +5,7 @@
 				<div class="sm:hidden md:flex md:gap-x-6">
 					<a
 						class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-						href="/docs/getting-started">Getting Started</a
+						href="/docs/getting-started/quick-start">Getting Started</a
 					><a
 						class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
 						href="/docs/components">Components</a
@@ -98,10 +98,10 @@
 					/>
 				</svg>
 			</div>
-			<h2 class="font-semibold my-5">Generator</h2>
+			<h2 class="font-semibold my-5">Styles</h2>
 			<p class="mt-2 font-display text-md text-slate-50">
-				Using object list fields with attributes, you can generate automatically a dynamic form with
-				custom rules.
+				Full control on style form using classes of diffirent libraries like bootstrap and
+				tailwindcss
 			</p>
 		</div>
 		<div class="bg-zinc-400 shadow-lg shadow-zinc-400/50 text-center p-10 rounded-xl">
@@ -123,10 +123,10 @@
 					/>
 				</svg>
 			</div>
-			<h2 class="font-semibold my-5">Generator</h2>
+			<h2 class="font-semibold my-5">Speed</h2>
 			<p class="mt-2 font-display text-md text-slate-50">
-				Using object list fields with attributes, you can generate automatically a dynamic form with
-				custom rules.
+				Build fastly a dynamic form with full control of validation and getting easly values with
+				custom messages
 			</p>
 		</div>
 	</div>
