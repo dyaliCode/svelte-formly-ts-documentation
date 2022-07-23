@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+    <script>
+      const key = 'svelteness::color-scheme';
+      const scheme = localStorage[key];
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (scheme === 'dark' || (scheme !== 'light' && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  
+    <meta http-equiv="content-security-policy" content="">
+		
+	<link rel="stylesheet" href="/_app/immutable/assets/__layout-kit-docs-1abde173.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/scroll-f726ebda.css">
+	<link rel="modulepreload" href="/_app/immutable/start-f1c05213.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-29635d82.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-eb14b229.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout-kit-docs.svelte-df4c2fee.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/scroll-face605a.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/old_index@kit-docs.md-45d05f14.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/CodeFence-3b1ba0cf.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/Link-1d5bbe41.js">
+	</head>
+	<body>
+		<div>
+
+
+
+
+<div class="kit-docs bg-gray-body min-h-full min-w-full h-full transition-transform duration-150 ease-out" style="font-family: var(--kd-font-family-sans, inherit); --kd-breadcrumbs-height: 0px; --kd--navbar-height: calc(var(--kd-navbar-height) + var(--kd-breadcrumbs-height));"><div class="fixed top-0 z-30 w-full flex-none transform-gpu transition-transform duration-150 ease-out supports-backdrop-blur:bg-white/60 bg-gray-200/95 backdrop-blur dark:bg-gray-800/60 translate-y-0" style="border-bottom: var(--kd-navbar-border-bottom);"><div class="flex w-full flex-col items-center justify-center mx-auto max-w-[var(--kd-navbar-max-width)] p-[var(--kd-navbar-padding)] h-[var(--kd--navbar-height)]"><div class="flex w-full items-center"><div class="logo svelte-1jmdrf2" slot="navbar-left">
+  <a class="group transform-gpu text-lg font-medium transition-transform hover:scale-105" href="/">
+    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0">Svelte Formly</span>
+    </a></div>
+        
+
+    <div class="flex-1"></div>
+
+    <div class="992:hidden -mr-2 flex items-center">
+
+      <div class="relative inline-block text-left not-prose"><button id="popover-button-1" type="button" class="inline-flex w-full justify-center rounded-md p-2 text-lg font-medium text-gray-soft hover:text-gray-inverse" aria-controls="popover-1" aria-expanded="false" aria-haspopup="true"><svg width="30" height="30" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><!-- HTML_TAG_START --><path fill="currentColor" d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z"/><!-- HTML_TAG_END --></svg>
+          <span class="sr-only">Main navigation menu</span>
+        </button>
+
+  <div class="fixed top-0 left-0 bg-black/40 backdrop-blur-sm dark:bg-gray-700/80 transition-opacity duration-75 pointer-events-auto z-40 w-screen h-screen opacity-0 invisible"></div>
+
+  <div hidden></div>
+
+</div></div>
+
+    <div class="992:flex 992:items-center hidden"><nav><ul class="flex items-center space-x-8 text-lg font-medium"><li class="mt-4 first:mt-0 992:mt-0"><a class="p-1 text-gray-soft hover:text-gray-inverse" href="/docs">Documentation</a></li></ul></nav>
+
+      
+        
+
+      <div class="border-gray-divider ml-6 mr-2.5 h-7 w-2 border-l-[1.5px]"></div>
+
+      <div class="hidden 992:flex items-center">
+        
+        <div class="relative inline-block text-left not-prose"><button id="menu-button-1" type="button" class="inline-flex w-full justify-center rounded-md p-2 text-lg font-medium text-gray-soft hover:text-gray-inverse" aria-controls="menu-1" aria-expanded="false" aria-haspopup="true"><svg width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="h-6 w-6"><!-- HTML_TAG_START --><path fill="currentColor" d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/><!-- HTML_TAG_END --></svg>
+    <span class="sr-only">Color Scheme</span>
+  </button>
+
+  <div hidden></div>
+
+</div></div></div></div>
+
+  
+
+          
+        </div></div>
+
+  <div class="mx-auto w-full flex flex-row min-h-full max-w-[var(--kd-content-max-width)] pt-[var(--kd--navbar-height)] z-20">
+
+    <main class="w-full overflow-x-hidden 992:min-h-[calc(100vh-var(--kd--navbar-height))] min-h-[calc(100vh-var(--kd--navbar-height))]" style="max-width: var(--kd-main-max-width);">
+
+      <div style="max-width: 992px; margin: 0 auto;"><h1>Svelte Formly</h1>
+<p>A good solution to generate and control a dynamic forms using core and custom rules with
+customize styles.</p>
+<h2 id="redirecting" tabindex="-1">
+<a class="header-anchor" href="#redirecting" aria-hidden="true">#</a> Redirecting</h2>
+<p>You might want the home page to be the first page of your documentation. If this is the case,
+rename this file to <code>index.svelte</code> and replace the content of this file with the following:</p>
+<div class="code-fence overflow-y-auto relative max-h-[60vh] 576:max-h-[32rem] my-8 rounded-md shadow-lg mx-auto border border-gray-divider lang-svelte ext-svelte" style="background-color: var(--kd-code-fence-bg);"><div class="sticky top-0 left-0 z-10 flex items-center rounded-md pt-2 backdrop-blur supports-backdrop-blur:bg-white/60" style="background-color: var(--kd-code-fence-top-bar-bg);"><span class="ml-3.5 font-mono text-sm text-gray-300">svelte</span>
+
+      <div class="flex-1"></div>
+
+      <button type="button" class="mr-2 px-2 py-1 hover:text-white"><div class="text-white absolute top-2.5 right-4 transition-opacity z-10 duration-300 px-2 py-1 rounded-md ease-out text-sm font-mono hidden opacity-0" aria-hidden="true" style="background-color: var(--kd-code-copied-bg-color);">Copied!</div>
+
+          <svg width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="opacity-100 transition-opacity duration-600 ease-in"><!-- HTML_TAG_START --><path fill="currentColor" d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.007-1H7zM5.003 8L5 20h10V8H5.003zM9 6h8v10h2V4H9v2z"/><!-- HTML_TAG_END --></svg>
+          <span class="sr-only">Copy code</span></button></div>
+
+  <div class="code relative z-0 overflow-hidden"><div class=""><!-- HTML_TAG_START --><pre><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">context</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">module</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> prerender </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #FF9CAC">true</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #676E95; font-style: italic">/** </span><span style="color: #89DDFF; font-style: italic">@</span><span style="color: #C792EA; font-style: italic">type</span><span style="color: #676E95; font-style: italic"> </span><span style="color: #89DDFF; font-style: italic">{</span><span style="color: #FFCB6B; font-style: italic">import(&quot;@sveltejs/kit&quot;).Load</span><span style="color: #89DDFF; font-style: italic">}</span><span style="color: #676E95; font-style: italic"> */</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">load</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">			status</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #F78C6C">307</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #F07178">			redirect</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">/docs</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">};</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
+
+    
+
+    </div></div></div>
+
+      
+
+      </main>
+
+    <div class="992:flex-1"></div>
+
+    </div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="15a29vt">
+		import { start } from "/_app/immutable/start-f1c05213.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="15a29vt"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [2, 13],
+				params: {},
+				routeId: "old_index@kit-docs"
+			}
+		});
+	</script><script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/old_index.meta.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"null"}</script></div>
+	</body>
+</html>

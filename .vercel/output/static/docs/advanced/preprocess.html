@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+    <script>
+      const key = 'svelteness::color-scheme';
+      const scheme = localStorage[key];
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (scheme === 'dark' || (scheme !== 'light' && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  
+    <meta http-equiv="content-security-policy" content=""><title>Advanced: Preprocess | Svelte Formly</title>
+		<meta name="description" content="You can easly make a form more reactive using preprocess." data-svelte="svelte-18oalgx">
+	<link rel="stylesheet" href="/_app/immutable/assets/__layout-kit-docs-1abde173.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/scroll-f726ebda.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/Result-9fb10857.css">
+	<link rel="modulepreload" href="/_app/immutable/start-f1c05213.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-29635d82.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-eb14b229.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout-kit-docs.svelte-df4c2fee.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/scroll-face605a.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/docs/__layout@kit-docs.svelte-df6bd09a.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/docs/_...2_advanced/_...5_preprocess.md-a42d0283.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/Result-fb5c37b2.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/CodeFence-3b1ba0cf.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/Link-1d5bbe41.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/Admonition-c3cb81bf.js">
+	</head>
+	<body>
+		<div>
+
+
+
+
+<div class="kit-docs bg-gray-body min-h-full min-w-full h-full transition-transform duration-150 ease-out" style="font-family: var(--kd-font-family-sans, inherit); --kd--navbar-height: calc(var(--kd-navbar-height) + var(--kd-breadcrumbs-height));"><div class="fixed top-0 z-30 w-full flex-none transform-gpu transition-transform duration-150 ease-out supports-backdrop-blur:bg-white/60 bg-gray-200/95 backdrop-blur dark:bg-gray-800/60 translate-y-0" style="border-bottom: var(--kd-navbar-border-bottom);"><div class="flex w-full flex-col items-center justify-center mx-auto max-w-[var(--kd-navbar-max-width)] p-[var(--kd-navbar-padding)] h-[var(--kd--navbar-height)]"><div class="flex w-full items-center"><div class="logo svelte-1jmdrf2" slot="navbar-left">
+  <a class="group transform-gpu text-lg font-medium transition-transform hover:scale-105" href="/">
+    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0">Svelte Formly</span>
+    </a></div>
+        
+
+    <div class="flex-1"></div>
+
+    <div class="992:hidden -mr-2 flex items-center">
+
+      <div class="relative inline-block text-left not-prose"><button id="popover-button-8" type="button" class="inline-flex w-full justify-center rounded-md p-2 text-lg font-medium text-gray-soft hover:text-gray-inverse" aria-controls="popover-8" aria-expanded="false" aria-haspopup="true"><svg width="30" height="30" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><!-- HTML_TAG_START --><path fill="currentColor" d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z"/><!-- HTML_TAG_END --></svg>
+          <span class="sr-only">Main navigation menu</span>
+        </button>
+
+  <div class="fixed top-0 left-0 bg-black/40 backdrop-blur-sm dark:bg-gray-700/80 transition-opacity duration-75 pointer-events-auto z-40 w-screen h-screen opacity-0 invisible"></div>
+
+  <div hidden></div>
+
+</div></div>
+
+    <div class="992:flex 992:items-center hidden"><nav><ul class="flex items-center space-x-8 text-lg font-medium"><li class="mt-4 first:mt-0 992:mt-0"><a class="p-1 border-b hover:border-b-2 border-brand text-gray-inverse" href="/docs">Documentation</a></li></ul></nav>
+
+      
+        
+
+      <div class="border-gray-divider ml-6 mr-2.5 h-7 w-2 border-l-[1.5px]"></div>
+
+      <div class="hidden 992:flex items-center">
+        
+        <div class="relative inline-block text-left not-prose"><button id="menu-button-8" type="button" class="inline-flex w-full justify-center rounded-md p-2 text-lg font-medium text-gray-soft hover:text-gray-inverse" aria-controls="menu-8" aria-expanded="false" aria-haspopup="true"><svg width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="h-6 w-6"><!-- HTML_TAG_START --><path fill="currentColor" d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/><!-- HTML_TAG_END --></svg>
+    <span class="sr-only">Color Scheme</span>
+  </button>
+
+  <div hidden></div>
+
+</div></div></div></div>
+
+  <div class="border-gray-divider 992:hidden flex w-full items-center mt-4 pt-4 border-t"><button id="main-sidebar-button" type="button" class="text-gray-soft hover:text-gray-inverse inline-flex justify-center rounded-md p-2 text-sm font-medium" aria-controls="main-sidebar" aria-expanded="false" aria-haspopup="true"><span class="sr-only">Open main sidebar</span>
+                  <svg width="28" height="28" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><!-- HTML_TAG_START --><path fill="currentColor" d="M21 18v2H3v-2h18zM17.05 3.55L22 8.5l-4.95 4.95v-9.9zM12 11v2H3v-2h9zm0-7v2H3V4h9z"/><!-- HTML_TAG_END --></svg></button>
+
+              <ol class="text-md text-gray-soft flex items-center whitespace-nowrap leading-6 mt-px ml-2.5"><li class="flex items-center">Advanced
+                      <svg width="16" height="16" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="mx-1"><!-- HTML_TAG_START --><path fill="currentColor" d="m13.172 12l-4.95-4.95l1.414-1.414L16 12l-6.364 6.364l-1.414-1.414z"/><!-- HTML_TAG_END --></svg></li>
+                  <li class="truncate font-semibold text-slate-900 dark:text-slate-200">Preprocess</li></ol></div>
+
+          
+        </div></div>
+
+  <div class="mx-auto w-full flex flex-row min-h-full max-w-[var(--kd-content-max-width)] pt-[var(--kd--navbar-height)] z-20"><aside id="main-sidebar" class="sidebar self-start fixed top-0 left-0 transform bg-gray-body z-50 border-gray-divider border-r -translate-x-full transform transition-transform duration-200 ease-out will-change-transform max-h-screen min-h-screen min-w-[var(--kd-sidebar-min-width)] max-w-[var(--kd-sidebar-max-width)] 992:translate-x-0 922:block 992:sticky 992:z-0 overflow-y-auto p-[var(--kd-sidebar-padding)] 992:top-[var(--kd--navbar-height)] 992:min-h-[calc(100vh-var(--kd--navbar-height))] 992:max-h-[calc(100vh-var(--kd--navbar-height))]" role="dialog" aria-modal="true" style=""><div class="992:hidden sticky top-0 left-0 flex items-center"><div class="flex-1"></div>
+    <button class="text-gray-soft hover:text-gray-inverse p-4 -mx-6 pointer-events-none"><svg width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><!-- HTML_TAG_START --><path fill="currentColor" d="m12 10.586l4.95-4.95l1.414 1.414l-4.95 4.95l4.95 4.95l-1.414 1.414l-4.95-4.95l-4.95 4.95l-1.414-1.414l4.95-4.95l-4.95-4.95L7.05 5.636z"/><!-- HTML_TAG_END --></svg>
+      <span class="sr-only">Close sidebar</span></button></div>
+
+  <nav class="992:px-1">
+
+    
+
+    <ul class="mt-8 pb-28 992:pb-0">
+        <li class="992:mt-10 mt-12 first:mt-0"><h5 class="text-gray-strong 992:mb-3 mb-8 text-lg font-semibold">Getting Started
+            </h5>
+          <ul class="border-gray-divider space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/getting-started/quick-start" style="">
+                  Quick Start
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/getting-started/validation" style="">
+                  Validation
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/getting-started/style" style="">
+                  Style
+                  </a>
+              </li></ul>
+        </li>
+        <li class="992:mt-10 mt-12 first:mt-0"><h5 class="text-gray-strong 992:mb-3 mb-8 text-lg font-semibold">Advanced
+            </h5>
+          <ul class="border-gray-divider space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/advanced/alter-form" style="">
+                  Alter Form
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/advanced/multiple-form" style="">
+                  Multiple Forms
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/advanced/custom-validation" style="">
+                  Custom Validation
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 text-brand font-semibold" href="/docs/advanced/preprocess" style="border-color: var(--kd-sidebar-border-active);">
+                  Preprocess
+                  </a>
+              </li></ul>
+        </li></ul>
+
+    
+        </nav></aside>
+
+<div class="992:hidden z-40"><div class="fixed top-0 left-0 bg-black/40 backdrop-blur-sm dark:bg-gray-700/80 transition-opacity duration-75 pointer-events-auto z-40 w-screen h-screen opacity-0 invisible"></div></div>
+
+    <main class="w-full overflow-x-hidden 992:min-h-[calc(100vh-var(--kd--navbar-height))] min-h-[calc(100vh-var(--kd--navbar-height))] px-8 992:px-16 pt-8" style="max-width: var(--kd-main-max-width, var(--kd-article-max-width));">
+
+      <article class="markdown prose dark:prose-invert z-10 max-w-[var(--kd-article-max-width)]"><p class="text-brand mb-3.5 text-[15px] font-semibold leading-6">Advanced</p>
+
+          
+
+<h1>Preprocess</h1>
+<div class="admonition my-8 border-2 border-l-8 p-4 rounded-md mx-auto shadow-xl border-pink-400 bg-pink-300/10"><div class="flex h-full items-center font-bold text-pink-400"><svg width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="mr-1.5 text-xl"><!-- HTML_TAG_START --><path fill="currentColor" d="m15 14l-.117.007a1 1 0 0 0-.876.876L14 15v6H3.998A.996.996 0 0 1 3 20.007V3.993C3 3.445 3.445 3 3.993 3h16.014c.548 0 .993.447.993.999V14h-6zm6 2l-5 4.997V16h5z"/><!-- HTML_TAG_END --></svg>
+    <span class="flex items-center">NOTE</span></div>
+
+  <div class="pl-1 text-lg text-gray-inverse"><p>You can easly make a form more reactive using preprocess. 🎉</p></div></div>
+<h2 id="example-calculator" tabindex="-1">
+<a class="header-anchor" href="#example-calculator" aria-hidden="true">#</a> Example Calculator</h2>
+<div class="code-fence overflow-y-auto relative max-h-[60vh] 576:max-h-[32rem] my-8 rounded-md shadow-lg mx-auto border border-gray-divider lang-svelte ext-svelte" style="background-color: var(--kd-code-fence-bg);"><div class="sticky top-0 left-0 z-10 flex items-center rounded-md pt-2 backdrop-blur supports-backdrop-blur:bg-white/60" style="background-color: var(--kd-code-fence-top-bar-bg);"><span class="ml-3.5 font-mono text-sm text-gray-300">Calculator</span>
+
+      <div class="flex-1"></div>
+
+      <button type="button" class="mr-2 px-2 py-1 hover:text-white"><div class="text-white absolute top-2.5 right-4 transition-opacity z-10 duration-300 px-2 py-1 rounded-md ease-out text-sm font-mono hidden opacity-0" aria-hidden="true" style="background-color: var(--kd-code-copied-bg-color);">Copied!</div>
+
+          <svg width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="opacity-100 transition-opacity duration-600 ease-in"><!-- HTML_TAG_START --><path fill="currentColor" d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.007-1H7zM5.003 8L5 20h10V8H5.003zM9 6h8v10h2V4H9v2z"/><!-- HTML_TAG_END --></svg>
+          <span class="sr-only">Copy code</span></button></div>
+
+  <div class="code relative z-0 overflow-hidden"><div class=""><!-- HTML_TAG_START --><pre><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">lang</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">ts</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">Formly</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">type</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">IField</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">svelte-formly</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> form_name </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">formly_calculator</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> fields</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">IField</span><span style="color: #A6ACCD">[] </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> [</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">input</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number_a</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">attributes</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">id</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number_a</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">label</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Number A</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">rules</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> [</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">required</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD">]</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">input</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number_b</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">attributes</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">id</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number_b</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">label</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Number B</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">rules</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> [</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">required</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD">]</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">input</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">total</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">attributes</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">id</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">total</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">label</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Total = Number A + Number B</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">readonly</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FF9CAC">true</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #82AAFF">preprocess</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">field</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">IField</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> fields</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">IField</span><span style="color: #A6ACCD">[]</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> values</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">any</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF; font-style: italic">if</span><span style="color: #F07178"> (</span><span style="color: #A6ACCD">values</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">touched</span><span style="color: #F07178"> </span><span style="color: #89DDFF">===</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number_a</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">||</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">values</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">touched</span><span style="color: #F07178"> </span><span style="color: #89DDFF">===</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">number_b</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">) </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">					</span><span style="color: #A6ACCD">field</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">value</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">parseInt</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">values</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">number_a</span><span style="color: #F07178">) </span><span style="color: #89DDFF">+</span><span style="color: #F07178"> </span><span style="color: #82AAFF">parseInt</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">values</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">number_b</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">field</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #A6ACCD">	]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Result</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Formly</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">{</span><span style="color: #A6ACCD">form_name</span><span style="color: #C792EA">}</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">{</span><span style="color: #A6ACCD">fields</span><span style="color: #C792EA">}</span><span style="color: #89DDFF"> /&gt;</span></span>
+<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #FFCB6B">Result</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
+
+    
+
+    <div class="pointer-events-none absolute inset-0 mt-[0.7em] h-full w-full leading-[27px]" aria-hidden="true"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><br><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><br><br><br><br><br><br><br></div></div></div><div class="result admonition my-8 border-2 border-l-8 p-4 rounded-md mx-auto shadow-xl border-blue-400 bg-blue-300/10"><div class="flex h-full items-center font-bold text-blue-400"><span class="flex items-center">Result</span></div>
+	<form><label for="number_a" class="label">Number A</label>
+					<input type="number" id="number_a" required  >
+					<label for="number_b" class="label">Number B</label>
+					<input type="number" id="number_b" required  >
+					<label for="total" class="label">Total = Number A + Number B</label>
+					<input type="number" id="total"   readonly>
+					
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button></form></div>
+<h2 id="example-fetch-data" tabindex="-1">
+<a class="header-anchor" href="#example-fetch-data" aria-hidden="true">#</a> Example Fetch data</h2>
+<div class="code-fence overflow-y-auto relative max-h-[60vh] 576:max-h-[32rem] my-8 rounded-md shadow-lg mx-auto border border-gray-divider lang-svelte ext-svelte" style="background-color: var(--kd-code-fence-bg);"><div class="sticky top-0 left-0 z-10 flex items-center rounded-md pt-2 backdrop-blur supports-backdrop-blur:bg-white/60" style="background-color: var(--kd-code-fence-top-bar-bg);"><span class="ml-3.5 font-mono text-sm text-gray-300">Fetch Data</span>
+
+      <div class="flex-1"></div>
+
+      <button type="button" class="mr-2 px-2 py-1 hover:text-white"><div class="text-white absolute top-2.5 right-4 transition-opacity z-10 duration-300 px-2 py-1 rounded-md ease-out text-sm font-mono hidden opacity-0" aria-hidden="true" style="background-color: var(--kd-code-copied-bg-color);">Copied!</div>
+
+          <svg width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="opacity-100 transition-opacity duration-600 ease-in"><!-- HTML_TAG_START --><path fill="currentColor" d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.007-1H7zM5.003 8L5 20h10V8H5.003zM9 6h8v10h2V4H9v2z"/><!-- HTML_TAG_END --></svg>
+          <span class="sr-only">Copy code</span></button></div>
+
+  <div class="code relative z-0 overflow-hidden"><div class=""><!-- HTML_TAG_START --><pre><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">lang</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">ts</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">Formly</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">type</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">IField</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">svelte-formly</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">let</span><span style="color: #A6ACCD"> loading</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">boolean</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #FF9CAC">false</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// Fetch Users</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> fetchUsers </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">async</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">res</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #82AAFF">fetch</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">https://jsonplaceholder.cypress.io/users?_limit=10</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">data</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">res</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">json</span><span style="color: #F07178">()</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">data</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">map</span><span style="color: #F07178">(</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">item</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">any</span><span style="color: #89DDFF">)</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> (</span><span style="color: #89DDFF">{</span><span style="color: #F07178"> value</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">item</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">id</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> title</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">item</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">name</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">))</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// Fetch posts</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> fetchPosts </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">async</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">res</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #82AAFF">fetch</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">https://jsonplaceholder.cypress.io/posts?_limit=10</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">data</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">res</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">json</span><span style="color: #F07178">()</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">data</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">map</span><span style="color: #F07178">(</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">item</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">any</span><span style="color: #89DDFF">)</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> (</span><span style="color: #89DDFF">{</span><span style="color: #F07178"> value</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">item</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">id</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> title</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">item</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">title</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">))</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> form_name </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">formly_fetch_data</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> fields</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">IField</span><span style="color: #A6ACCD">[] </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> [</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">select</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">category</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">attributes</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">id</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">category</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">label</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Category</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">rules</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> [</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">required</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD">]</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">extra</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">options</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> [</span></span>
+<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">						</span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">null,</span></span>
+<span class="line"><span style="color: #A6ACCD">						</span><span style="color: #F07178">title</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">None</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">						</span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">						</span><span style="color: #F07178">title</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Users</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">						</span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">						</span><span style="color: #F07178">title</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Posts</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #A6ACCD">				]</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">select</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">items</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">attributes</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">id</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">items</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #F07178">label</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Items</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">},</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">extra</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{},</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #82AAFF">preprocess</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">async</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">field</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">IField</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> fields</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">IField</span><span style="color: #A6ACCD">[]</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> values</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">any</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF; font-style: italic">if</span><span style="color: #F07178"> (</span><span style="color: #A6ACCD">values</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">touched</span><span style="color: #F07178"> </span><span style="color: #89DDFF">===</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">category</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">) </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">					</span><span style="color: #A6ACCD">loading</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #FF9CAC">true</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">					</span><span style="color: #A6ACCD">field</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">extra</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">options</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">values</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">category</span><span style="color: #F07178"> </span><span style="color: #89DDFF">==</span><span style="color: #F07178"> </span><span style="color: #F78C6C">1</span><span style="color: #F07178"> </span><span style="color: #89DDFF">?</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #82AAFF">fetchUsers</span><span style="color: #F07178">() </span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #82AAFF">fetchPosts</span><span style="color: #F07178">()</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">					</span><span style="color: #A6ACCD">loading</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #FF9CAC">false</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">field</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #A6ACCD">	]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">let</span><span style="color: #A6ACCD"> data</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">any</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{};</span></span>
+<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> onSubmit </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">({</span><span style="color: #A6ACCD"> detail </span><span style="color: #89DDFF">}:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">any</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">data</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">detail</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">};</span></span>
+<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">pre</span><span style="color: #89DDFF">&gt;&lt;</span><span style="color: #F07178">code</span><span style="color: #89DDFF">&gt;{</span><span style="color: #A6ACCD">JSON</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">stringify</span><span style="color: #A6ACCD">(data</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">null,</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">2</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">}&lt;/</span><span style="color: #F07178">code</span><span style="color: #89DDFF">&gt;&lt;/</span><span style="color: #F07178">pre</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">strong</span><span style="color: #89DDFF">&gt;{</span><span style="color: #A6ACCD">loading </span><span style="color: #89DDFF">?</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">loading...</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">DONE!</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">}&lt;/</span><span style="color: #F07178">strong</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">Formly</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">{</span><span style="color: #A6ACCD">form_name</span><span style="color: #C792EA">}</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">{</span><span style="color: #A6ACCD">fields</span><span style="color: #C792EA">}</span><span style="color: #89DDFF"> </span><span style="color: #89DDFF; font-style: italic">on</span><span style="color: #89DDFF">:</span><span style="color: #FFCB6B">submit</span><span style="color: #89DDFF">={</span><span style="color: #A6ACCD">onSubmit</span><span style="color: #89DDFF">} /&gt;</span></span>
+<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
+
+    
+
+    <div class="pointer-events-none absolute inset-0 mt-[0.7em] h-full w-full leading-[27px]" aria-hidden="true"><br><br><br><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><div class="w-full border-l-[5px] font-mono text-transparent" style="border-color: var(--kd-code-highlight-border); background-color: var(--kd-code-highlight-color);"> 
+            </div><br><br><br><br><br><br><br><br><br><br><br><br></div></div></div><div class="result admonition my-8 border-2 border-l-8 p-4 rounded-md mx-auto shadow-xl border-blue-400 bg-blue-300/10"><div class="flex h-full items-center font-bold text-blue-400"><span class="flex items-center">Result</span></div>
+	<pre>		<code>{}</code>
+	</pre>
+	<strong>DONE!</strong>
+	<form><label for="category" class="label">Category</label>
+					<select name="category" id="category" required  ><option >None
+				</option><option value="1" >Users
+				</option><option value="2" >Posts
+				</option></select>
+					<label for="items" class="label">Items</label>
+					<select name="items" id="items"   ></select>
+					
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button></form></div></article>
+
+      <hr class="border-gray-divider mt-20">
+
+        <div class="992:text-xl flex items-center pt-12 pb-20 text-lg font-semibold text-gray-300"><div class="mb-4 flex flex-col items-start"><span class="text-gray-inverse ml-3 mb-4 inline-block">Previous</span>
+              
+  <a class="group transform-gpu text-lg font-medium transition-transform hover:scale-105 hover:text-gray-inverse" href="/docs/advanced/custom-validation" sveltekit:prefetch><span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 inline-block">&lt;-</span>
+    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 -translate-x-3 ">Custom Validation</span>
+    </a></div>
+
+          </div>
+
+      </main>
+
+    <div class="992:flex-1"></div>
+
+    <div class="on-this-page pt-8 pb-8 hidden overflow-auto min-w-[160px] sticky right-4 pr-4 1440:right-6 1440:pr-2 1280:block pl-0.5 top-[var(--kd--navbar-height)] max-h-[calc(100vh-var(--kd--navbar-height))]" style=""><h5 class="font-semibold w-full text-left text-gray-inverse text-lg">On this page</h5>
+    <ul class="space-y-4 mt-4"><li class="text-gray-soft hover:text-gray-inverse"><a href="#example-calculator">Example Calculator</a></li>
+        <li class="text-gray-soft hover:text-gray-inverse"><a href="#example-fetch-data">Example Fetch data</a></li>
+        </ul></div></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="20imoi">
+		import { start } from "/_app/immutable/start-f1c05213.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="20imoi"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [2, 3, 10],
+				params: (function(a){return {"2":a,"5":a}}("")),
+				routeId: "docs/[...2]advanced/[...5]preprocess"
+			}
+		});
+	</script><script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/docs_advanced_preprocess.meta.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"Example Calculator\",\"slug\":\"example-calculator\",\"children\":[]},{\"level\":2,\"title\":\"Example Fetch data\",\"slug\":\"example-fetch-data\",\"children\":[]}],\"title\":\"Preprocess\",\"description\":\"You can easly make a form more reactive using preprocess.\",\"frontmatter\":{\"title\":\"Preprocess\",\"description\":\"You can easly make a form more reactive using preprocess.\"},\"lastUpdated\":1658454113648}"}</script>
+	<script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/docs.sidebar.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"links\":{\"Getting Started\":[{\"title\":\"Quick Start\",\"slug\":\"/docs/getting-started/quick-start\"},{\"title\":\"Validation\",\"slug\":\"/docs/getting-started/validation\"},{\"title\":\"Style\",\"slug\":\"/docs/getting-started/style\"}],\"Advanced\":[{\"title\":\"Alter Form\",\"slug\":\"/docs/advanced/alter-form\"},{\"title\":\"Multiple Forms\",\"slug\":\"/docs/advanced/multiple-form\"},{\"title\":\"Custom Validation\",\"slug\":\"/docs/advanced/custom-validation\"},{\"title\":\"Preprocess\",\"slug\":\"/docs/advanced/preprocess\"}]}}"}</script></div>
+	</body>
+</html>
