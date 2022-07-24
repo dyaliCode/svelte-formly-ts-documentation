@@ -92,6 +92,9 @@
 		margin: 10px 0;
 		width: 100%;
 	}
+	:global(input[type='checkbox'], input[type='radio']) {
+		width: 4%;
+	}
 	:global(.invalid-feedback.error) {
 		font-size: 0.85rem;
 		color: rgb(253, 76, 76);
@@ -122,6 +125,24 @@
 
 			:global(h2) {
 				margin-top: 0 !important;
+			}
+		}
+	}
+	:global(.form-group) {
+		margin-bottom: 1rem;
+	}
+	:global(.list-files ul) {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		:global(button) {
+			background-color: rgb(255, 71, 71);
+			width: auto;
+
+			&:hover {
+				box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+				background-color: rgb(255, 134, 134);
 			}
 		}
 	}

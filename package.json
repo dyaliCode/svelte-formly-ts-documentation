@@ -44,6 +44,6 @@
   },
   "type": "module",
   "dependencies": {
-    "svelte-formly-light": "^0.0.8"
+    "svelte-formly-light": "^0.0.10"
   }
 }

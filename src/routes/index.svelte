@@ -6,12 +6,14 @@
 					<a
 						class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
 						href="/docs/getting-started/quick-start">Getting Started</a
-					><a
+					>
+					<a
 						class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-						href="/docs/getting-started/quick-start">Components</a
-					><a
+						href="/docs/components/text">Components</a
+					>
+					<a
 						class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-						href="/docs/getting-started/quick-start">Examples</a
+						href="/docs/advanced/alter-form">Advanced</a
 					>
 				</div>
 			</div>
@@ -66,7 +68,7 @@
 	</div>
 </header>
 
-<main>
+<main class="bg-slate-100 pb-32">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32">
 		<h1
 			class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl"
@@ -82,7 +84,7 @@
 		<div class="mt-10 flex justify-center gap-x-6">
 			<a
 				class="group inline-flex items-center justify-center rounded-full py-4 px-8 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-600 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
-				href="/docs/getting-started/quick-start">Quick Start</a
+				href="/docs/getting-started/quick-start">Getting Started</a
 			>
 			<!-- <a
 					class="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-orange-600 focus-visible:ring-slate-300"
@@ -97,7 +99,7 @@
 	</div>
 
 	<div
-		class="mx-auto mt-4 sm:w-3/4 md:w-3/5 grid gap-4 xl:grid-cols-3 lg:grid-cols-1 sm:grid-cols-1 text-slate-50"
+		class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4 sm:w-3/4 md:w-3/5 grid gap-4 xl:grid-cols-3 lg:grid-cols-1 sm:grid-cols-1 text-slate-50"
 	>
 		<div class="bg-orange-400 shadow-lg shadow-rose-400/50 text-center p-10 rounded-xl">
 			<div class="w-full">
