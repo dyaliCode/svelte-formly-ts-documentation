@@ -58,7 +58,7 @@
 <KitDocs {meta}>
 	<KitDocsLayout {navbar} {sidebar}>
 		<div class="logo" slot="navbar-left">
-			<Button href="/">Svelte Formly</Button>
+			<Button href="/.">Svelte Formly</Button>
 		</div>
 
 		<slot />
