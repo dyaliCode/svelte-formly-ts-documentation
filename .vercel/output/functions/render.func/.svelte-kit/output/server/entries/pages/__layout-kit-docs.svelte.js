@@ -763,7 +763,7 @@ const KitDocsLayout = create_ssr_component(($$result, $$props, $$bindings, slots
 });
 const __layoutKitDocs_svelte_svelte_type_style_lang = "";
 const css = {
-  code: ':root{--kd-color-brand-rgb:233, 127, 6}:root.dark{--kd-color-brand-rgb:213, 149, 76}.logo.svelte-fd26hi a{display:flex;align-items:center;justify-content:center}.logo.svelte-fd26hi svg{height:36px;overflow:hidden}input, select{border:1px solid #ccc;border-radius:4px;padding:8px;margin:10px 0;width:100%}input[type="checkbox"], input[type="radio"]{width:4%}.invalid-feedback.error{font-size:0.85rem;color:rgb(253, 76, 76);margin-bottom:10px}.result form button{padding:4px 8px;background-color:rgb(103, 174, 255);color:white;border-radius:5px;margin-top:20px;display:block;width:100%}.result form button:hover{box-shadow:0px 2px 5px rgba(0, 0, 0, 0.2);background-color:rgb(91, 156, 255)}.result article{padding:20px;margin-top:2rem;border:solid #dddddd 1px;border-radius:10px;box-shadow:0px 0px 10px rgba(0, 0, 0, 0.1);background-color:white}.result article h2{margin-top:0 !important}.form-group{margin-bottom:1rem}.list-files ul{list-style:none;padding:0;margin:0}.list-files ul button{background-color:rgb(255, 71, 71);width:auto}.list-files ul button:hover{box-shadow:0px 2px 5px rgba(0, 0, 0, 0.2);background-color:rgb(255, 134, 134)}',
+  code: ':root{--kd-color-brand-rgb:233, 127, 6}:root.dark{--kd-color-brand-rgb:213, 149, 76}input, select{border:1px solid #ccc;border-radius:4px;padding:8px;margin:10px 0;width:100%}input[type="checkbox"], input[type="radio"]{width:4%}.invalid-feedback.error{font-size:0.85rem;color:rgb(253, 76, 76);margin-bottom:10px}.result form button{padding:4px 8px;background-color:rgb(103, 174, 255);color:white;border-radius:5px;margin-top:20px;display:block;width:100%}.result form button:hover{box-shadow:0px 2px 5px rgba(0, 0, 0, 0.2);background-color:rgb(91, 156, 255)}.result article{padding:20px;margin-top:2rem;border:solid #dddddd 1px;border-radius:10px;box-shadow:0px 0px 10px rgba(0, 0, 0, 0.1);background-color:white}.result article h2{margin-top:0 !important}.form-group{margin-bottom:1rem}.list-files ul{list-style:none;padding:0;margin:0}.list-files ul button{background-color:rgb(255, 71, 71);width:auto}.list-files ul button:hover{box-shadow:0px 2px 5px rgba(0, 0, 0, 0.2);background-color:rgb(255, 134, 134)}',
   map: null
 };
 const prerender = true;
@@ -804,17 +804,9 @@ const _layout_kit_docs = create_ssr_component(($$result, $$props, $$bindings, sl
 ${validate_component(KitDocs, "KitDocs").$$render($$result, { meta }, {}, {
     default: () => {
       return `${validate_component(KitDocsLayout, "KitDocsLayout").$$render($$result, { navbar, sidebar }, {}, {
-        "navbar-left": () => {
-          return `<div class="${"logo svelte-fd26hi"}" slot="${"navbar-left"}">${validate_component(Button, "Button").$$render($$result, {
-            href: "/docs/getting-started/quick-start"
-          }, {}, {
-            default: () => {
-              return `Svelte Formly`;
-            }
-          })}</div>`;
-        },
         default: () => {
-          return `${slots.default ? slots.default({}) : ``}`;
+          return `
+		${slots.default ? slots.default({}) : ``}`;
         }
       })}`;
     }
