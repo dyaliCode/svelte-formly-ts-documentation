@@ -1,5 +1,5 @@
-import { c as create_ssr_component, b as spread, f as escape_object, j as subscribe, g as add_attribute, e as escape, v as validate_component, k as each } from "./index-372256f6.js";
-import { g as getI18nContext } from "./scroll-2311f007.js";
+import { c as create_ssr_component, b as spread, d as escape_object, i as subscribe, f as add_attribute, j as escape, v as validate_component, k as each } from "./index-f648a96f.js";
+import { g as getI18nContext } from "./scroll-51b8d1e2.js";
 import clsx from "clsx";
 const File_copy_line = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<svg${spread([

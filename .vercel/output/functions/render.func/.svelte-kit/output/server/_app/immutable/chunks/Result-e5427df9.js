@@ -1,5 +1,5 @@
-import { c as create_ssr_component, g as add_attribute, u as is_void, e as escape, k as each, v as validate_component, h as createEventDispatcher, w as null_to_empty, m as missing_component } from "./index-372256f6.js";
-import { z as writable } from "./scroll-2311f007.js";
+import { c as create_ssr_component, f as add_attribute, u as is_void, j as escape, k as each, v as validate_component, g as createEventDispatcher, w as null_to_empty, m as missing_component } from "./index-f648a96f.js";
+import { z as writable } from "./scroll-51b8d1e2.js";
 function createForms() {
   const { subscribe, set, update } = writable([]);
   return {
@@ -265,7 +265,7 @@ const AutoComplete = create_ssr_component(($$result, $$props, $$bindings, slots)
 	${itemsFiltered.length && showList ? `<div class="${"list-items svelte-1m9l8b1"}"><ul class="${"svelte-1m9l8b1"}">${each(itemsFiltered, (item) => {
     return `<li class="${"svelte-1m9l8b1"}">${escape(item.title)}</li>`;
   })}
-				<li class="${"done svelte-1m9l8b1"}">Done
+				<li class="${"done svelte-1m9l8b1"}">Close
 				</li></ul></div>` : ``}
 </div>`;
 });

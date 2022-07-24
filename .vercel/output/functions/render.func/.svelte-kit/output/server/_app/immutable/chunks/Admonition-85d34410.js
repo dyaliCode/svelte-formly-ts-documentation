@@ -1,6 +1,6 @@
-import { c as create_ssr_component, b as spread, f as escape_object, j as subscribe, g as add_attribute, v as validate_component, m as missing_component, e as escape } from "./index-372256f6.js";
+import { c as create_ssr_component, b as spread, d as escape_object, i as subscribe, f as add_attribute, v as validate_component, m as missing_component, j as escape } from "./index-f648a96f.js";
 import clsx from "clsx";
-import { g as getI18nContext } from "./scroll-2311f007.js";
+import { g as getI18nContext } from "./scroll-51b8d1e2.js";
 const Sticky_note_fill = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<svg${spread([
     { width: "1.2em" },

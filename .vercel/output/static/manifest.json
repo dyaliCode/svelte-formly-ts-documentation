@@ -16,7 +16,7 @@
     "src": "src/fonts/FiraCode-VF.woff"
   },
   ".svelte-kit/runtime/client/start.js": {
-    "file": "_app/immutable/start-3847e3cb.js",
+    "file": "_app/immutable/start-50a829ef.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -24,8 +24,8 @@
       "_singletons-eb14b229.js"
     ],
     "dynamicImports": [
-      ".svelte-kit/runtime/components/layout.svelte",
-      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/__layout.svelte",
+      "src/routes/__error.svelte",
       "src/routes/__layout-kit-docs.svelte",
       "src/routes/docs/__layout@kit-docs.svelte",
       "src/routes/docs/[...1]getting-started/[...1]quick-start.md",
@@ -35,24 +35,38 @@
       "src/routes/docs/[...2]advanced/[...2]multiple-form.md",
       "src/routes/docs/[...2]advanced/[...4]custom-validation.md",
       "src/routes/docs/[...2]advanced/[...5]preprocess.md",
+      "src/routes/docs/[...3]components/[...10]file.md",
+      "src/routes/docs/[...3]components/[...11]autocomplete.md",
+      "src/routes/docs/[...3]components/[...1]text.md",
+      "src/routes/docs/[...3]components/[...2]password.md",
+      "src/routes/docs/[...3]components/[...3]email.md",
+      "src/routes/docs/[...3]components/[...4]number.md",
+      "src/routes/docs/[...3]components/[...5]range.md",
+      "src/routes/docs/[...3]components/[...6]textarea.md",
+      "src/routes/docs/[...3]components/[...7]select.md",
+      "src/routes/docs/[...3]components/[...8]checkbox.md",
+      "src/routes/docs/[...3]components/[...9]radio.md",
       "src/routes/docs/index.svelte",
       "src/routes/index.svelte",
       "src/routes/index@kit-docs.md",
-      "src/routes/old__layout.svelte"
+      "src/routes/old_index.svelte"
     ]
   },
-  ".svelte-kit/runtime/components/layout.svelte": {
-    "file": "_app/immutable/layout.svelte-b50e2091.js",
-    "src": ".svelte-kit/runtime/components/layout.svelte",
+  "src/routes/__layout.svelte": {
+    "file": "_app/immutable/pages/__layout.svelte-4cce2d53.js",
+    "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-29635d82.js"
+    ],
+    "css": [
+      "_app/immutable/assets/app-74ed3c58.css"
     ]
   },
-  ".svelte-kit/runtime/components/error.svelte": {
-    "file": "_app/immutable/error.svelte-163666bb.js",
-    "src": ".svelte-kit/runtime/components/error.svelte",
+  "src/routes/__error.svelte": {
+    "file": "_app/immutable/pages/__error.svelte-6bf175b9.js",
+    "src": "src/routes/__error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
@@ -60,7 +74,7 @@
     ]
   },
   "src/routes/__layout-kit-docs.svelte": {
-    "file": "_app/immutable/pages/__layout-kit-docs.svelte-df4c2fee.js",
+    "file": "_app/immutable/pages/__layout-kit-docs.svelte-3adc4205.js",
     "src": "src/routes/__layout-kit-docs.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -70,7 +84,7 @@
       "_singletons-eb14b229.js"
     ],
     "css": [
-      "_app/immutable/assets/__layout-kit-docs-1abde173.css"
+      "_app/immutable/assets/__layout-kit-docs-2a9eccf0.css"
     ],
     "assets": [
       "_app/immutable/assets/Inter-VF.roman-latin-1b58736b.woff2",
@@ -89,13 +103,13 @@
     ]
   },
   "src/routes/docs/[...1]getting-started/[...1]quick-start.md": {
-    "file": "_app/immutable/pages/docs/_...1_getting-started/_...1_quick-start.md-c9d0908a.js",
+    "file": "_app/immutable/pages/docs/_...1_getting-started/_...1_quick-start.md-8436e63e.js",
     "src": "src/routes/docs/[...1]getting-started/[...1]quick-start.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-29635d82.js",
-      "_Result-fb5c37b2.js",
+      "_Result-defa069c.js",
       "_scroll-face605a.js",
       "_CodeFence-3b1ba0cf.js",
       "_Link-1d5bbe41.js",
@@ -104,7 +118,7 @@
     ]
   },
   "src/routes/docs/[...1]getting-started/[...2]validation.md": {
-    "file": "_app/immutable/pages/docs/_...1_getting-started/_...2_validation.md-97e50863.js",
+    "file": "_app/immutable/pages/docs/_...1_getting-started/_...2_validation.md-f6b21176.js",
     "src": "src/routes/docs/[...1]getting-started/[...2]validation.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -117,7 +131,7 @@
     ]
   },
   "src/routes/docs/[...1]getting-started/[...3]style.md": {
-    "file": "_app/immutable/pages/docs/_...1_getting-started/_...3_style.md-f17fd8c0.js",
+    "file": "_app/immutable/pages/docs/_...1_getting-started/_...3_style.md-b2b3604c.js",
     "src": "src/routes/docs/[...1]getting-started/[...3]style.md",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -130,56 +144,210 @@
     ]
   },
   "src/routes/docs/[...2]advanced/[...1]alter-form.md": {
-    "file": "_app/immutable/pages/docs/_...2_advanced/_...1_alter-form.md-8d1909ba.js",
+    "file": "_app/immutable/pages/docs/_...2_advanced/_...1_alter-form.md-094bf622.js",
     "src": "src/routes/docs/[...2]advanced/[...1]alter-form.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-29635d82.js",
-      "_Result-fb5c37b2.js",
+      "_Result-defa069c.js",
       "_scroll-face605a.js",
       "_CodeFence-3b1ba0cf.js",
       "_singletons-eb14b229.js"
     ]
   },
   "src/routes/docs/[...2]advanced/[...2]multiple-form.md": {
-    "file": "_app/immutable/pages/docs/_...2_advanced/_...2_multiple-form.md-5dc2fae5.js",
+    "file": "_app/immutable/pages/docs/_...2_advanced/_...2_multiple-form.md-474619e1.js",
     "src": "src/routes/docs/[...2]advanced/[...2]multiple-form.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-29635d82.js",
-      "_Result-fb5c37b2.js",
+      "_Result-defa069c.js",
       "_scroll-face605a.js",
       "_CodeFence-3b1ba0cf.js",
+      "_Admonition-c3cb81bf.js",
       "_singletons-eb14b229.js"
     ]
   },
   "src/routes/docs/[...2]advanced/[...4]custom-validation.md": {
-    "file": "_app/immutable/pages/docs/_...2_advanced/_...4_custom-validation.md-86109397.js",
+    "file": "_app/immutable/pages/docs/_...2_advanced/_...4_custom-validation.md-c2e02e70.js",
     "src": "src/routes/docs/[...2]advanced/[...4]custom-validation.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-29635d82.js",
-      "_Result-fb5c37b2.js",
+      "_Result-defa069c.js",
       "_scroll-face605a.js",
       "_CodeFence-3b1ba0cf.js",
       "_singletons-eb14b229.js"
     ]
   },
   "src/routes/docs/[...2]advanced/[...5]preprocess.md": {
-    "file": "_app/immutable/pages/docs/_...2_advanced/_...5_preprocess.md-a42d0283.js",
+    "file": "_app/immutable/pages/docs/_...2_advanced/_...5_preprocess.md-3cba049e.js",
     "src": "src/routes/docs/[...2]advanced/[...5]preprocess.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-29635d82.js",
-      "_Result-fb5c37b2.js",
+      "_Result-defa069c.js",
       "_scroll-face605a.js",
       "_CodeFence-3b1ba0cf.js",
       "_Link-1d5bbe41.js",
       "_Admonition-c3cb81bf.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...10]file.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...10_file.md-cc5a31ef.js",
+    "src": "src/routes/docs/[...3]components/[...10]file.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...11]autocomplete.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...11_autocomplete.md-8da71253.js",
+    "src": "src/routes/docs/[...3]components/[...11]autocomplete.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...1]text.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...1_text.md-29e920da.js",
+    "src": "src/routes/docs/[...3]components/[...1]text.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Text-0e4aceea.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_Admonition-c3cb81bf.js",
+      "_Result-defa069c.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...2]password.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...2_password.md-d830112d.js",
+    "src": "src/routes/docs/[...3]components/[...2]password.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_Admonition-c3cb81bf.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...3]email.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...3_email.md-46f7e85f.js",
+    "src": "src/routes/docs/[...3]components/[...3]email.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_Admonition-c3cb81bf.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...4]number.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...4_number.md-36353d68.js",
+    "src": "src/routes/docs/[...3]components/[...4]number.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Number-5eb9ce72.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_Admonition-c3cb81bf.js",
+      "_Result-defa069c.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...5]range.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...5_range.md-79ae73e1.js",
+    "src": "src/routes/docs/[...3]components/[...5]range.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Number-5eb9ce72.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_Admonition-c3cb81bf.js",
+      "_Result-defa069c.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...6]textarea.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...6_textarea.md-9610db5d.js",
+    "src": "src/routes/docs/[...3]components/[...6]textarea.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Text-0e4aceea.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_Admonition-c3cb81bf.js",
+      "_Result-defa069c.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...7]select.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...7_select.md-8333db8d.js",
+    "src": "src/routes/docs/[...3]components/[...7]select.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...8]checkbox.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...8_checkbox.md-1d1f4712.js",
+    "src": "src/routes/docs/[...3]components/[...8]checkbox.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
+      "_singletons-eb14b229.js"
+    ]
+  },
+  "src/routes/docs/[...3]components/[...9]radio.md": {
+    "file": "_app/immutable/pages/docs/_...3_components/_...9_radio.md-380d6991.js",
+    "src": "src/routes/docs/[...3]components/[...9]radio.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js",
+      "_scroll-face605a.js",
+      "_CodeFence-3b1ba0cf.js",
       "_singletons-eb14b229.js"
     ]
   },
@@ -193,15 +361,12 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "_app/immutable/pages/index.svelte-9fa26557.js",
+    "file": "_app/immutable/pages/index.svelte-3d056184.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-29635d82.js"
-    ],
-    "css": [
-      "_app/immutable/assets/app-a2c176c3.css"
     ]
   },
   "src/routes/index@kit-docs.md": {
@@ -217,16 +382,16 @@
       "_singletons-eb14b229.js"
     ]
   },
-  "src/routes/old__layout.svelte": {
-    "file": "_app/immutable/pages/old__layout.svelte-0e026ed1.js",
-    "src": "src/routes/old__layout.svelte",
+  "src/routes/old_index.svelte": {
+    "file": "_app/immutable/pages/old_index.svelte-4ffb4291.js",
+    "src": "src/routes/old_index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-29635d82.js"
     ],
     "css": [
-      "_app/immutable/assets/app-a2c176c3.css"
+      "_app/immutable/assets/app-74ed3c58.css"
     ]
   },
   "_index-29635d82.js": {
@@ -268,8 +433,8 @@
       "_scroll-face605a.js"
     ]
   },
-  "_Result-fb5c37b2.js": {
-    "file": "_app/immutable/chunks/Result-fb5c37b2.js",
+  "_Result-defa069c.js": {
+    "file": "_app/immutable/chunks/Result-defa069c.js",
     "imports": [
       "_index-29635d82.js",
       "_singletons-eb14b229.js"
@@ -278,20 +443,34 @@
       "_app/immutable/assets/Result-9fb10857.css"
     ]
   },
-  "scroll.css": {
-    "file": "_app/immutable/assets/scroll-f726ebda.css",
-    "src": "scroll.css"
+  "_Text-0e4aceea.js": {
+    "file": "_app/immutable/chunks/Text-0e4aceea.js",
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js"
+    ]
+  },
+  "_Number-5eb9ce72.js": {
+    "file": "_app/immutable/chunks/Number-5eb9ce72.js",
+    "imports": [
+      "_index-29635d82.js",
+      "_Result-defa069c.js"
+    ]
   },
   "Result.css": {
     "file": "_app/immutable/assets/Result-9fb10857.css",
     "src": "Result.css"
   },
+  "scroll.css": {
+    "file": "_app/immutable/assets/scroll-f726ebda.css",
+    "src": "scroll.css"
+  },
   "app.css": {
-    "file": "_app/immutable/assets/app-a2c176c3.css",
+    "file": "_app/immutable/assets/app-74ed3c58.css",
     "src": "app.css"
   },
   "src/routes/__layout-kit-docs.css": {
-    "file": "_app/immutable/assets/__layout-kit-docs-1abde173.css",
+    "file": "_app/immutable/assets/__layout-kit-docs-2a9eccf0.css",
     "src": "src/routes/__layout-kit-docs.css"
   }
 }

@@ -1,5 +1,5 @@
-import { o as onDestroy, c as create_ssr_component, a as compute_rest_props, b as spread, d as escape_attribute_value, f as escape_object, g as add_attribute, v as validate_component, h as createEventDispatcher, i as compute_slots, j as subscribe, m as missing_component, e as escape, k as each, l as set_store_value } from "../../_app/immutable/chunks/index-372256f6.js";
-import { i as isUndefined, a as isDarkColorScheme, c as colorScheme, g as getI18nContext, b as colorSchemes, d as isLargeScreen, e as isString, _ as __kitDocs, p as page, f as isNull, h as getNavbarContext, u as uppercaseFirstLetter, j as getSidebarContext, k as isFunction, l as isActiveSidebarLink, m as kitDocs, n as getNavigationContext, o as hasMarkdownHeaders, s as scrollDirection, q as scrollTop, r as setNavigationContext, t as setNavbarContext, v as setSidebarContext, w as createSidebarContext, x as setI18nContext, D as DEFAULT_NAVIGATION_CONFIG, y as DEFAULT_I18N_TRANSLATIONS, z as writable } from "../../_app/immutable/chunks/scroll-2311f007.js";
+import { o as onDestroy, c as create_ssr_component, a as compute_rest_props, b as spread, e as escape_attribute_value, d as escape_object, f as add_attribute, v as validate_component, g as createEventDispatcher, h as compute_slots, i as subscribe, m as missing_component, j as escape, k as each, l as set_store_value } from "../../_app/immutable/chunks/index-f648a96f.js";
+import { i as isUndefined, a as isDarkColorScheme, c as colorScheme, g as getI18nContext, b as colorSchemes, d as isLargeScreen, e as isString, _ as __kitDocs, p as page, f as isNull, h as getNavbarContext, u as uppercaseFirstLetter, j as getSidebarContext, k as isFunction, l as isActiveSidebarLink, m as kitDocs, n as getNavigationContext, o as hasMarkdownHeaders, s as scrollDirection, q as scrollTop, r as setNavigationContext, t as setNavbarContext, v as setSidebarContext, w as createSidebarContext, x as setI18nContext, D as DEFAULT_NAVIGATION_CONFIG, y as DEFAULT_I18N_TRANSLATIONS, z as writable } from "../../_app/immutable/chunks/scroll-51b8d1e2.js";
 import clsx from "clsx";
 const normalize = "";
 const fonts = "";
@@ -763,7 +763,7 @@ const KitDocsLayout = create_ssr_component(($$result, $$props, $$bindings, slots
 });
 const __layoutKitDocs_svelte_svelte_type_style_lang = "";
 const css = {
-  code: ":root{--kd-color-brand-rgb:233, 127, 6}:root.dark{--kd-color-brand-rgb:213, 149, 76}.logo.svelte-1jmdrf2 a{display:flex;align-items:center;justify-content:center}.logo.svelte-1jmdrf2 svg{height:36px;overflow:hidden}input, select{border:1px solid #ccc;border-radius:4px;padding:8px;margin:10px 0;width:100%}.invalid-feedback.error{font-size:0.85rem;color:rgb(253, 76, 76);margin-bottom:10px}.result form button{padding:4px 8px;background-color:rgb(103, 174, 255);color:white;border-radius:5px;margin-top:20px;display:block;width:100%}.result form button:hover{box-shadow:0px 2px 5px rgba(0, 0, 0, 0.2);background-color:rgb(91, 156, 255)}.result article{padding:20px;margin-top:2rem;border:solid #dddddd 1px;border-radius:10px;box-shadow:0px 0px 10px rgba(0, 0, 0, 0.1);background-color:white}.result article h2{margin-top:0 !important}",
+  code: ':root{--kd-color-brand-rgb:233, 127, 6}:root.dark{--kd-color-brand-rgb:213, 149, 76}.logo.svelte-fd26hi a{display:flex;align-items:center;justify-content:center}.logo.svelte-fd26hi svg{height:36px;overflow:hidden}input, select{border:1px solid #ccc;border-radius:4px;padding:8px;margin:10px 0;width:100%}input[type="checkbox"], input[type="radio"]{width:4%}.invalid-feedback.error{font-size:0.85rem;color:rgb(253, 76, 76);margin-bottom:10px}.result form button{padding:4px 8px;background-color:rgb(103, 174, 255);color:white;border-radius:5px;margin-top:20px;display:block;width:100%}.result form button:hover{box-shadow:0px 2px 5px rgba(0, 0, 0, 0.2);background-color:rgb(91, 156, 255)}.result article{padding:20px;margin-top:2rem;border:solid #dddddd 1px;border-radius:10px;box-shadow:0px 0px 10px rgba(0, 0, 0, 0.1);background-color:white}.result article h2{margin-top:0 !important}.form-group{margin-bottom:1rem}.list-files ul{list-style:none;padding:0;margin:0}.list-files ul button{background-color:rgb(255, 71, 71);width:auto}.list-files ul button:hover{box-shadow:0px 2px 5px rgba(0, 0, 0, 0.2);background-color:rgb(255, 134, 134)}',
   map: null
 };
 const prerender = true;
@@ -805,7 +805,9 @@ ${validate_component(KitDocs, "KitDocs").$$render($$result, { meta }, {}, {
     default: () => {
       return `${validate_component(KitDocsLayout, "KitDocsLayout").$$render($$result, { navbar, sidebar }, {}, {
         "navbar-left": () => {
-          return `<div class="${"logo svelte-1jmdrf2"}" slot="${"navbar-left"}">${validate_component(Button, "Button").$$render($$result, { href: "/" }, {}, {
+          return `<div class="${"logo svelte-fd26hi"}" slot="${"navbar-left"}">${validate_component(Button, "Button").$$render($$result, {
+            href: "/docs/getting-started/quick-start"
+          }, {}, {
             default: () => {
               return `Svelte Formly`;
             }

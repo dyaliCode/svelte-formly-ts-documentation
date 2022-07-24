@@ -1,8 +1,8 @@
-import { c as create_ssr_component, j as subscribe, e as escape, v as validate_component } from "../../../../_app/immutable/chunks/index-372256f6.js";
+import { c as create_ssr_component, i as subscribe, j as escape, v as validate_component } from "../../../../_app/immutable/chunks/index-f648a96f.js";
 import "clsx";
-import { A as frontmatter } from "../../../../_app/immutable/chunks/scroll-2311f007.js";
-import { C as CodeFence } from "../../../../_app/immutable/chunks/CodeFence-77ae8440.js";
-import { L as Link } from "../../../../_app/immutable/chunks/Link-10104f07.js";
+import { A as frontmatter } from "../../../../_app/immutable/chunks/scroll-51b8d1e2.js";
+import { C as CodeFence } from "../../../../_app/immutable/chunks/CodeFence-0f5f7525.js";
+import { L as Link } from "../../../../_app/immutable/chunks/Link-9dc4ac91.js";
 const U5B_2u5Dvalidation = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $frontmatter, $$unsubscribe_frontmatter;
   $$unsubscribe_frontmatter = subscribe(frontmatter, (value) => $frontmatter = value);
@@ -36,7 +36,7 @@ ${validate_component(CodeFence, "CodeFence").$$render($$result, {
     }
   })} Custom rules</h2>
 ${validate_component(CodeFence, "CodeFence").$$render($$result, {
-    title: "example",
+    title: "Example",
     lang: "javascript",
     ext: "js",
     linesCount: 43,

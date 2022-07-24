@@ -1,4 +1,4 @@
-import { c as create_ssr_component, s as setContext, v as validate_component, m as missing_component } from "./_app/immutable/chunks/index-372256f6.js";
+import { c as create_ssr_component, s as setContext, v as validate_component, m as missing_component } from "./_app/immutable/chunks/index-f648a96f.js";
 function afterUpdate() {
 }
 const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -2325,21 +2325,31 @@ function set_paths(paths) {
 }
 function set_prerendering(value) {
 }
-const template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + `/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-    <script>
-      const key = 'svelteness::color-scheme';
-      const scheme = localStorage[key];
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (scheme === 'dark' || (scheme !== 'light' && prefersDark)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    <\/script>
-  
-    ` + head + "\n	</head>\n	<body>\n		<div>" + body + "</div>\n	</body>\n</html>\n";
+const template = ({ head, body, assets: assets2, nonce }) => `<!DOCTYPE html>
+<html
+	lang="en"
+	class="h-full scroll-smooth bg-white antialiased [font-feature-settings:'ss01'] js-focus-visible"
+>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="` + assets2 + `/favicon.png" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+		/>
+
+		<script>
+			const key = 'svelteness::color-scheme';
+			const scheme = localStorage[key];
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (scheme === 'dark' || (scheme !== 'light' && prefersDark)) {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		<\/script>
+
+		` + head + '\n	</head>\n	<body class="flex h-full flex-col">\n		' + body + "\n	</body>\n</html>\n";
 let read = null;
 set_paths({ "base": "", "assets": "" });
 let default_protocol = "https";

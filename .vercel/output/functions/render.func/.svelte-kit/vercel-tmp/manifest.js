@@ -3,7 +3,7 @@ export const manifest = {
 	assets: new Set(["favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		entry: {"file":"_app/immutable/start-3847e3cb.js","imports":["_app/immutable/start-3847e3cb.js","_app/immutable/chunks/index-29635d82.js","_app/immutable/chunks/singletons-eb14b229.js"],"stylesheets":[]},
+		entry: {"file":"_app/immutable/start-50a829ef.js","imports":["_app/immutable/start-50a829ef.js","_app/immutable/chunks/index-29635d82.js","_app/immutable/chunks/singletons-eb14b229.js"],"stylesheets":[]},
 		nodes: [
 			() => import('../output/server/nodes/0.js'),
 			() => import('../output/server/nodes/1.js'),
@@ -15,7 +15,18 @@ export const manifest = {
 			() => import('../output/server/nodes/7.js'),
 			() => import('../output/server/nodes/8.js'),
 			() => import('../output/server/nodes/9.js'),
-			() => import('../output/server/nodes/10.js')
+			() => import('../output/server/nodes/10.js'),
+			() => import('../output/server/nodes/11.js'),
+			() => import('../output/server/nodes/12.js'),
+			() => import('../output/server/nodes/13.js'),
+			() => import('../output/server/nodes/14.js'),
+			() => import('../output/server/nodes/15.js'),
+			() => import('../output/server/nodes/16.js'),
+			() => import('../output/server/nodes/17.js'),
+			() => import('../output/server/nodes/18.js'),
+			() => import('../output/server/nodes/19.js'),
+			() => import('../output/server/nodes/20.js'),
+			() => import('../output/server/nodes/21.js')
 		],
 		routes: [
 			{
@@ -109,6 +120,127 @@ export const manifest = {
 				path: null,
 				shadow: null,
 				a: [2,3,10],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...10]file",
+				pattern: /^\/docs\/(.*?)components\/(.*?)file\/?$/,
+				names: ["3","10"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,11],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...11]autocomplete",
+				pattern: /^\/docs\/(.*?)components\/(.*?)autocomplete\/?$/,
+				names: ["3","11"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,12],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...1]text",
+				pattern: /^\/docs\/(.*?)components\/(.*?)text\/?$/,
+				names: ["3","1"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,13],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...2]password",
+				pattern: /^\/docs\/(.*?)components\/(.*?)password\/?$/,
+				names: ["3","2"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,14],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...3]email",
+				pattern: /^\/docs\/(.*?)components\/(.*?)email\/?$/,
+				names: ["3","3"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,15],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...4]number",
+				pattern: /^\/docs\/(.*?)components\/(.*?)number\/?$/,
+				names: ["3","4"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,16],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...5]range",
+				pattern: /^\/docs\/(.*?)components\/(.*?)range\/?$/,
+				names: ["3","5"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,17],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...6]textarea",
+				pattern: /^\/docs\/(.*?)components\/(.*?)textarea\/?$/,
+				names: ["3","6"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,18],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...7]select",
+				pattern: /^\/docs\/(.*?)components\/(.*?)select\/?$/,
+				names: ["3","7"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,19],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...8]checkbox",
+				pattern: /^\/docs\/(.*?)components\/(.*?)checkbox\/?$/,
+				names: ["3","8"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,20],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "docs/[...3]components/[...9]radio",
+				pattern: /^\/docs\/(.*?)components\/(.*?)radio\/?$/,
+				names: ["3","9"],
+				types: [null,null],
+				path: null,
+				shadow: null,
+				a: [2,3,21],
 				b: [1]
 			}
 		],

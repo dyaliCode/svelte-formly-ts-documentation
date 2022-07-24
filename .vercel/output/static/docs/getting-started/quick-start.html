@@ -1,46 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+	lang="en"
+	class="h-full scroll-smooth bg-white antialiased [font-feature-settings:'ss01'] js-focus-visible"
+>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="../../favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-    <script>
-      const key = 'svelteness::color-scheme';
-      const scheme = localStorage[key];
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (scheme === 'dark' || (scheme !== 'light' && prefersDark)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
-  
-    <meta http-equiv="content-security-policy" content=""><title>Getting Started: Quick Start | Svelte Formly</title>
-		<meta name="description" content="With Svelte Formly you can generate a dynamic forms with custom rules and styles for application's sveltejs and sveltekit." data-svelte="svelte-18oalgx">
-	<link rel="stylesheet" href="/_app/immutable/assets/__layout-kit-docs-1abde173.css">
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+		/>
+
+		<script>
+			const key = 'svelteness::color-scheme';
+			const scheme = localStorage[key];
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (scheme === 'dark' || (scheme !== 'light' && prefersDark)) {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		</script>
+
+		<meta http-equiv="content-security-policy" content=""><title>Getting Started: Quick Start | Svelte Formly</title>
+		<meta name="description" content="With Svelte Formly you can generate a dynamic forms with custom rules and styles for web application's sveltejs and sveltekit." data-svelte="svelte-18oalgx">
+	<link rel="stylesheet" href="/_app/immutable/assets/__layout-kit-docs-2a9eccf0.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/scroll-f726ebda.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/Result-9fb10857.css">
-	<link rel="modulepreload" href="/_app/immutable/start-3847e3cb.js">
+	<link rel="modulepreload" href="/_app/immutable/start-50a829ef.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-29635d82.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-eb14b229.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout-kit-docs.svelte-df4c2fee.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout-kit-docs.svelte-3adc4205.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/scroll-face605a.js">
 	<link rel="modulepreload" href="/_app/immutable/pages/docs/__layout@kit-docs.svelte-df6bd09a.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/docs/_...1_getting-started/_...1_quick-start.md-c9d0908a.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/Result-fb5c37b2.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/docs/_...1_getting-started/_...1_quick-start.md-8436e63e.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/Result-defa069c.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/CodeFence-3b1ba0cf.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/Link-1d5bbe41.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/Admonition-c3cb81bf.js">
 	</head>
-	<body>
-		<div>
+	<body class="flex h-full flex-col">
+		
 
 
 
 
-<div class="kit-docs bg-gray-body min-h-full min-w-full h-full transition-transform duration-150 ease-out" style="font-family: var(--kd-font-family-sans, inherit); --kd--navbar-height: calc(var(--kd-navbar-height) + var(--kd-breadcrumbs-height));"><div class="fixed top-0 z-30 w-full flex-none transform-gpu transition-transform duration-150 ease-out supports-backdrop-blur:bg-white/60 bg-gray-200/95 backdrop-blur dark:bg-gray-800/60 translate-y-0" style="border-bottom: var(--kd-navbar-border-bottom);"><div class="flex w-full flex-col items-center justify-center mx-auto max-w-[var(--kd-navbar-max-width)] p-[var(--kd-navbar-padding)] h-[var(--kd--navbar-height)]"><div class="flex w-full items-center"><div class="logo svelte-1jmdrf2" slot="navbar-left">
-  <a class="group transform-gpu text-lg font-medium transition-transform hover:scale-105" href="/">
+<div class="kit-docs bg-gray-body min-h-full min-w-full h-full transition-transform duration-150 ease-out" style="font-family: var(--kd-font-family-sans, inherit); --kd--navbar-height: calc(var(--kd-navbar-height) + var(--kd-breadcrumbs-height));"><div class="fixed top-0 z-30 w-full flex-none transform-gpu transition-transform duration-150 ease-out supports-backdrop-blur:bg-white/60 bg-gray-200/95 backdrop-blur dark:bg-gray-800/60 translate-y-0" style="border-bottom: var(--kd-navbar-border-bottom);"><div class="flex w-full flex-col items-center justify-center mx-auto max-w-[var(--kd-navbar-max-width)] p-[var(--kd-navbar-padding)] h-[var(--kd--navbar-height)]"><div class="flex w-full items-center"><div class="logo svelte-fd26hi" slot="navbar-left">
+  <a class="group transform-gpu text-lg font-medium transition-transform hover:scale-105" href="/docs/getting-started/quick-start">
     <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0">Svelte Formly</span>
     </a></div>
         
@@ -123,6 +129,43 @@
                   Preprocess
                   </a>
               </li></ul>
+        </li>
+        <li class="992:mt-10 mt-12 first:mt-0"><h5 class="text-gray-strong 992:mb-3 mb-8 text-lg font-semibold">Components
+            </h5>
+          <ul class="border-gray-divider space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/text" style="">
+                  Text
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/password" style="">
+                  Password
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/email" style="">
+                  Email
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/number" style="">
+                  Number
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/range" style="">
+                  Range
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/textarea" style="">
+                  Textrea
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/select" style="">
+                  Select
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/checkbox" style="">
+                  Checkbox
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/radio" style="">
+                  Radio
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/file" style="">
+                  File
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1.5 -ml-px flex items-center border-l-2 py-2 pl-4 hover:border-gray-inverse text-gray-soft hover:text-gray-inverse border-transparent font-normal" href="/docs/components/autocomplete" style="">
+                  Autocomplete
+                  </a>
+              </li></ul>
         </li></ul>
 
     
@@ -139,14 +182,14 @@
 <h1>Quick Start</h1>
 <h2 id="introduction" tabindex="-1">
 <a class="header-anchor" href="#introduction" aria-hidden="true">#</a> Introduction</h2>
-<p>With Svelte Formly you can generate a dynamic forms with custom rules and styles for application's sveltejs and sveltekit.</p>
+<p>With Svelte Formly you can generate a dynamic forms with custom rules and styles for web application's sveltejs and sveltekit.</p>
 <div class="admonition my-8 border-2 border-l-8 p-4 rounded-md mx-auto shadow-xl border-indigo-400 bg-indigo-300/10"><div class="flex h-full items-center font-bold text-indigo-400"><svg width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="mr-1.5 text-xl"><!-- HTML_TAG_START --><path fill="currentColor" d="M17 2v2h-1v14c0 2.21-1.79 4-4 4s-4-1.79-4-4V4H7V2h10zm-4 13a1 1 0 1 0 0 2a1 1 0 0 0 0-2zm-2-3a1 1 0 1 0 0 2a1 1 0 0 0 0-2zm3-8h-4v4h4V4z"/><!-- HTML_TAG_END --></svg>
     <span class="flex items-center">EXPERIMENTAL</span></div>
 
   <div class="pl-1 text-lg text-gray-inverse"><ul><li>⚡ Generate dynamic and reactive forms.</li>
 <li>🙂 Easy to extend with custom field type and validation.</li></ul></div></div>
-<h2 id="quick-instalation" tabindex="-1">
-<a class="header-anchor" href="#quick-instalation" aria-hidden="true">#</a> Quick Instalation</h2>
+<h2 id="quick-installation" tabindex="-1">
+<a class="header-anchor" href="#quick-installation" aria-hidden="true">#</a> Quick Installation</h2>
 <div class="code-fence overflow-y-auto relative max-h-[60vh] 576:max-h-[32rem] my-8 rounded-md shadow-lg mx-auto border border-gray-divider lang-bash ext-sh" style="background-color: var(--kd-code-fence-bg);">
 
   <div class="code relative z-0 overflow-hidden"><div class=""><!-- HTML_TAG_START --><pre><code><span class="line"><span style="color: #A6ACCD">npm install svelte-formly</span></span>
@@ -156,7 +199,7 @@
 
     </div></div><h2 id="usage" tabindex="-1">
 <a class="header-anchor" href="#usage" aria-hidden="true">#</a> Usage</h2>
-<div class="code-fence overflow-y-auto relative max-h-[60vh] 576:max-h-[32rem] my-8 rounded-md shadow-lg mx-auto border border-gray-divider lang-svelte ext-svelte" style="background-color: var(--kd-code-fence-bg);"><div class="sticky top-0 left-0 z-10 flex items-center rounded-md pt-2 backdrop-blur supports-backdrop-blur:bg-white/60" style="background-color: var(--kd-code-fence-top-bar-bg);"><span class="ml-3.5 font-mono text-sm text-gray-300">Quick Usage</span>
+<div class="code-fence overflow-y-auto relative max-h-[60vh] 576:max-h-[32rem] my-8 rounded-md shadow-lg mx-auto border border-gray-divider lang-svelte ext-svelte" style="background-color: var(--kd-code-fence-bg);"><div class="sticky top-0 left-0 z-10 flex items-center rounded-md pt-2 backdrop-blur supports-backdrop-blur:bg-white/60" style="background-color: var(--kd-code-fence-top-bar-bg);"><span class="ml-3.5 font-mono text-sm text-gray-300">Example</span>
 
       <div class="flex-1"></div>
 
@@ -248,15 +291,15 @@
 
     <div class="on-this-page pt-8 pb-8 hidden overflow-auto min-w-[160px] sticky right-4 pr-4 1440:right-6 1440:pr-2 1280:block pl-0.5 top-[var(--kd--navbar-height)] max-h-[calc(100vh-var(--kd--navbar-height))]" style=""><h5 class="font-semibold w-full text-left text-gray-inverse text-lg">On this page</h5>
     <ul class="space-y-4 mt-4"><li class="text-gray-soft hover:text-gray-inverse"><a href="#introduction">Introduction</a></li>
-        <li class="text-gray-soft hover:text-gray-inverse"><a href="#quick-instalation">Quick Instalation</a></li>
+        <li class="text-gray-soft hover:text-gray-inverse"><a href="#quick-installation">Quick Installation</a></li>
         <li class="text-gray-soft hover:text-gray-inverse"><a href="#usage">Usage</a></li>
         </ul></div></div></div>
 
 
-		<script type="module" data-sveltekit-hydrate="2ekke">
-		import { start } from "/_app/immutable/start-3847e3cb.js";
+		<script type="module" data-sveltekit-hydrate="e2u86g">
+		import { start } from "/_app/immutable/start-50a829ef.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="2ekke"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="e2u86g"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -270,7 +313,7 @@
 				routeId: "docs/[...1]getting-started/[...1]quick-start"
 			}
 		});
-	</script><script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/docs_getting-started_quick-start.meta.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"Introduction\",\"slug\":\"introduction\",\"children\":[]},{\"level\":2,\"title\":\"Quick Instalation\",\"slug\":\"quick-instalation\",\"children\":[]},{\"level\":2,\"title\":\"Usage\",\"slug\":\"usage\",\"children\":[]}],\"title\":\"Quick Start\",\"description\":\"With Svelte Formly you can generate a dynamic forms with custom rules and styles for application's sveltejs and sveltekit.\",\"frontmatter\":{\"title\":\"Quick Start\",\"description\":\"With Svelte Formly you can generate a dynamic forms with custom rules and styles for application's sveltejs and sveltekit.\"},\"lastUpdated\":1658437542312}"}</script>
-	<script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/docs.sidebar.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"links\":{\"Getting Started\":[{\"title\":\"Quick Start\",\"slug\":\"/docs/getting-started/quick-start\"},{\"title\":\"Validation\",\"slug\":\"/docs/getting-started/validation\"},{\"title\":\"Style\",\"slug\":\"/docs/getting-started/style\"}],\"Advanced\":[{\"title\":\"Alter Form\",\"slug\":\"/docs/advanced/alter-form\"},{\"title\":\"Multiple Forms\",\"slug\":\"/docs/advanced/multiple-form\"},{\"title\":\"Custom Validation\",\"slug\":\"/docs/advanced/custom-validation\"},{\"title\":\"Preprocess\",\"slug\":\"/docs/advanced/preprocess\"}]}}"}</script></div>
+	</script><script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/docs_getting-started_quick-start.meta.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"Introduction\",\"slug\":\"introduction\",\"children\":[]},{\"level\":2,\"title\":\"Quick Installation\",\"slug\":\"quick-installation\",\"children\":[]},{\"level\":2,\"title\":\"Usage\",\"slug\":\"usage\",\"children\":[]}],\"title\":\"Quick Start\",\"description\":\"With Svelte Formly you can generate a dynamic forms with custom rules and styles for web application's sveltejs and sveltekit.\",\"frontmatter\":{\"title\":\"Quick Start\",\"description\":\"With Svelte Formly you can generate a dynamic forms with custom rules and styles for web application's sveltejs and sveltekit.\"},\"lastUpdated\":1658585163436}"}</script>
+	<script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/kit-docs/docs.sidebar.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"links\":{\"Getting Started\":[{\"title\":\"Quick Start\",\"slug\":\"/docs/getting-started/quick-start\"},{\"title\":\"Validation\",\"slug\":\"/docs/getting-started/validation\"},{\"title\":\"Style\",\"slug\":\"/docs/getting-started/style\"}],\"Advanced\":[{\"title\":\"Alter Form\",\"slug\":\"/docs/advanced/alter-form\"},{\"title\":\"Multiple Forms\",\"slug\":\"/docs/advanced/multiple-form\"},{\"title\":\"Custom Validation\",\"slug\":\"/docs/advanced/custom-validation\"},{\"title\":\"Preprocess\",\"slug\":\"/docs/advanced/preprocess\"}],\"Components\":[{\"title\":\"Text\",\"slug\":\"/docs/components/text\"},{\"title\":\"Password\",\"slug\":\"/docs/components/password\"},{\"title\":\"Email\",\"slug\":\"/docs/components/email\"},{\"title\":\"Number\",\"slug\":\"/docs/components/number\"},{\"title\":\"Range\",\"slug\":\"/docs/components/range\"},{\"title\":\"Textrea\",\"slug\":\"/docs/components/textarea\"},{\"title\":\"Select\",\"slug\":\"/docs/components/select\"},{\"title\":\"Checkbox\",\"slug\":\"/docs/components/checkbox\"},{\"title\":\"Radio\",\"slug\":\"/docs/components/radio\"},{\"title\":\"File\",\"slug\":\"/docs/components/file\"},{\"title\":\"Autocomplete\",\"slug\":\"/docs/components/autocomplete\"}]}}"}</script>
 	</body>
 </html>

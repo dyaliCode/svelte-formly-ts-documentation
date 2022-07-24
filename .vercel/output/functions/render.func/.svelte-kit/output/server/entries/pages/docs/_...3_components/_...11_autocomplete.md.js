@@ -1,0 +1,51 @@
+import { c as create_ssr_component, v as validate_component, i as subscribe, j as escape } from "../../../../_app/immutable/chunks/index-f648a96f.js";
+import { R as Result, F as Formly } from "../../../../_app/immutable/chunks/Result-e5427df9.js";
+import "clsx";
+import { A as frontmatter } from "../../../../_app/immutable/chunks/scroll-51b8d1e2.js";
+import { C as CodeFence } from "../../../../_app/immutable/chunks/CodeFence-0f5f7525.js";
+const Autocomplete = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  const fields = [
+    {
+      type: "autocomplete",
+      name: "name-field-autocomplete",
+      attributes: {
+        id: "id-field-autocomplete",
+        placeholder: "Tap item to select",
+        autocomplete: "off"
+      },
+      extra: {
+        filter_lenght: 3,
+        loadItemes: [
+          { value: 1, title: "item 1" },
+          { value: 2, title: "item 2" },
+          { value: 3, title: "item 3" },
+          { value: 4, title: "item 4" }
+        ]
+      }
+    }
+  ];
+  return `${validate_component(Result, "Result").$$render($$result, {}, {}, {
+    default: () => {
+      return `${validate_component(Formly, "Formly").$$render($$result, { fields, form_name: "field_autocomplete" }, {}, {})}`;
+    }
+  })}`;
+});
+const U5B_11u5Dautocomplete = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $frontmatter, $$unsubscribe_frontmatter;
+  $$unsubscribe_frontmatter = subscribe(frontmatter, (value) => $frontmatter = value);
+  $$unsubscribe_frontmatter();
+  return `<h1>${escape($frontmatter.title)}</h1>
+${validate_component(CodeFence, "CodeFence").$$render($$result, {
+    title: "Example",
+    lang: "typescript",
+    ext: "ts",
+    linesCount: 35,
+    highlightLines: [[3, 3], [10, 32]],
+    rawCode: "const fields: IField[] = [\n	{\n		type: 'autocomplete', // required\n		name: 'name-field-autocomplete', // required\n		attributes: {\n			id: 'id-field-autocomplete', // required\n			placeholder: 'Tap item to select', // optional\n			autocomplete: 'off' // optional\n		},\n		extra: {\n			filter_lenght: 3, // optional and by default = 0\n			loadItemes: [\n				// required\n				// list items with id and title attributes.\n				{\n					value: 1,\n					title: 'item 1'\n				},\n				{\n					value: 2,\n					title: 'item 2'\n				},\n				{\n					value: 3,\n					title: 'item 3'\n				},\n				{\n					value: 4,\n					title: 'item 4'\n				}\n			]\n		}\n	}\n];\n",
+    showCopyCode: true,
+    code: '<pre><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> fields</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">IField</span><span style="color: #A6ACCD">[] </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> [</span></span>\n<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">{</span></span>\n<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">type</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">autocomplete</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// required</span></span>\n<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">name-field-autocomplete</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// required</span></span>\n<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">attributes</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>\n<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">id</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">id-field-autocomplete</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// required</span></span>\n<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">placeholder</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Tap item to select</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// optional</span></span>\n<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">autocomplete</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">off</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// optional</span></span>\n<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">},</span></span>\n<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">extra</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>\n<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">filter_lenght</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">3</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// optional and by default = 0</span></span>\n<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #F07178">loadItemes</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> [</span></span>\n<span class="line"><span style="color: #89DDFF">				</span><span style="color: #676E95; font-style: italic">// required</span></span>\n<span class="line"><span style="color: #89DDFF">				</span><span style="color: #676E95; font-style: italic">// list items with id and title attributes.</span></span>\n<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #89DDFF">{</span></span>\n<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">,</span></span>\n<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #F07178">title</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">item 1</span><span style="color: #89DDFF">&#39;</span></span>\n<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #89DDFF">},</span></span>\n<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #89DDFF">{</span></span>\n<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">,</span></span>\n<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #F07178">title</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">item 2</span><span style="color: #89DDFF">&#39;</span></span>\n<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #89DDFF">},</span></span>\n<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #89DDFF">{</span></span>\n<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">3</span><span style="color: #89DDFF">,</span></span>\n<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #F07178">title</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">item 3</span><span style="color: #89DDFF">&#39;</span></span>\n<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #89DDFF">},</span></span>\n<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #89DDFF">{</span></span>\n<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #F07178">value</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">4</span><span style="color: #89DDFF">,</span></span>\n<span class="line"><span style="color: #A6ACCD">					</span><span style="color: #F07178">title</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">item 4</span><span style="color: #89DDFF">&#39;</span></span>\n<span class="line"><span style="color: #A6ACCD">				</span><span style="color: #89DDFF">}</span></span>\n<span class="line"><span style="color: #A6ACCD">			]</span></span>\n<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">}</span></span>\n<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">}</span></span>\n<span class="line"><span style="color: #A6ACCD">]</span><span style="color: #89DDFF">;</span></span>\n<span class="line"></span></code></pre>'
+  }, {}, {})}${validate_component(Autocomplete, "Field").$$render($$result, {}, {}, {})}`;
+});
+export {
+  U5B_11u5Dautocomplete as default
+};

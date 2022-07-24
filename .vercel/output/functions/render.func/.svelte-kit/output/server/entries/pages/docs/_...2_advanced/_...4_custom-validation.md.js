@@ -1,9 +1,9 @@
-import { c as create_ssr_component, v as validate_component, e as escape, j as subscribe } from "../../../../_app/immutable/chunks/index-372256f6.js";
-import { g as getValues } from "../../../../_app/immutable/chunks/form-04d70a5d.js";
-import { R as Result, F as Formly } from "../../../../_app/immutable/chunks/Result-1272ba48.js";
+import { c as create_ssr_component, v as validate_component, j as escape, i as subscribe } from "../../../../_app/immutable/chunks/index-f648a96f.js";
+import { g as getValues } from "../../../../_app/immutable/chunks/form-c802acab.js";
+import { R as Result, F as Formly } from "../../../../_app/immutable/chunks/Result-e5427df9.js";
 import "clsx";
-import { A as frontmatter } from "../../../../_app/immutable/chunks/scroll-2311f007.js";
-import { C as CodeFence } from "../../../../_app/immutable/chunks/CodeFence-77ae8440.js";
+import { A as frontmatter } from "../../../../_app/immutable/chunks/scroll-51b8d1e2.js";
+import { C as CodeFence } from "../../../../_app/immutable/chunks/CodeFence-0f5f7525.js";
 const form_name = "custom_validation";
 const CustomValidation = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   async function correctName() {
@@ -46,7 +46,7 @@ const U5B_4u5Dcustom_validation = create_ssr_component(($$result, $$props, $$bin
   $$unsubscribe_frontmatter();
   return `<h1>${escape($frontmatter.title)}</h1>
 ${validate_component(CodeFence, "CodeFence").$$render($$result, {
-    title: "example",
+    title: "Example",
     lang: "svelte",
     ext: "svelte",
     linesCount: 42,

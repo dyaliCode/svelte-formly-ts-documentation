@@ -1,9 +1,10 @@
-import { c as create_ssr_component, v as validate_component, j as subscribe, e as escape } from "../../../../_app/immutable/chunks/index-372256f6.js";
-import { g as getValues } from "../../../../_app/immutable/chunks/form-04d70a5d.js";
-import { R as Result, F as Formly } from "../../../../_app/immutable/chunks/Result-1272ba48.js";
+import { c as create_ssr_component, v as validate_component, i as subscribe, j as escape } from "../../../../_app/immutable/chunks/index-f648a96f.js";
+import { g as getValues } from "../../../../_app/immutable/chunks/form-c802acab.js";
+import { R as Result, F as Formly } from "../../../../_app/immutable/chunks/Result-e5427df9.js";
 import "clsx";
-import { A as frontmatter } from "../../../../_app/immutable/chunks/scroll-2311f007.js";
-import { C as CodeFence } from "../../../../_app/immutable/chunks/CodeFence-77ae8440.js";
+import { A as frontmatter } from "../../../../_app/immutable/chunks/scroll-51b8d1e2.js";
+import { C as CodeFence } from "../../../../_app/immutable/chunks/CodeFence-0f5f7525.js";
+import { A as Admonition } from "../../../../_app/immutable/chunks/Admonition-85d34410.js";
 const form_name_a = "formly_a";
 const form_name_b = "formly_b";
 const MultipleForm = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -95,11 +96,17 @@ const U5B_2u5Dmultiple_form = create_ssr_component(($$result, $$props, $$binding
   $$unsubscribe_frontmatter();
   return `<h1>${escape($frontmatter.title)}</h1>
 <p>${escape($frontmatter.description)}</p>
+${validate_component(Admonition, "Admonition").$$render($$result, { type: "danger" }, {}, {
+    default: () => {
+      return `<p>Form name should be <strong>unique</strong>.</p>`;
+    }
+  })}
 ${validate_component(CodeFence, "CodeFence").$$render($$result, {
-    title: "example",
+    title: "Example",
     lang: "svelte",
     ext: "svelte",
     linesCount: 86,
+    highlightLines: [[5, 5], [28, 28], [79, 79], [83, 83]],
     rawCode: `<script&#8203 lang="ts">
 	import { Formly, type IField, getValues } from 'svelte-formly';
 
